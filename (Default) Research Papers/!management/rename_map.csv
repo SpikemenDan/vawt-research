@@ -1,0 +1,161 @@
+﻿Curve_ID,current_file,previous_filename,new_filename,Action
+,Eboibi et al. [45]/Experimental investigation of the influence of solidity on the performance and flow field aerodynamics of vertical axis wind turbines at low Reynolds numbers.pdf,Eboibi2016.pdf,Eboibi2016.pdf,Reference paper
+,Eboibi et al. [45]/data/4 (N = 3) (cToR = 0.085714).png,Eboibi2016 (Fig 4).png,Eboibi2016 (Fig 4).png,Experimental cp tsr
+Eboibi2016-C001,"Eboibi et al. [45]/data/Eboibi2016 (Fig 4, N = 3, cToR = 0.085714) [Re_d = 12600, solidity = 0.26].csv",Eboibi2016 (Fig 4) (N = 3) (cToR = 0.085714) (C001).csv,Eboibi2016 (Fig 4) (N = 3) (cToR = 0.085714) (C001).csv,Use
+Eboibi2016-C002,"Eboibi et al. [45]/data/Eboibi2016 (Fig 4, N = 3, cToR = 0.085714) [Re_d = 14700, solidity = 0.26].csv",Eboibi2016 (Fig 4) (N = 3) (cToR = 0.085714) (C002).csv,Eboibi2016 (Fig 4) (N = 3) (cToR = 0.085714) (C002).csv,Use
+Eboibi2016-C003,"Eboibi et al. [45]/data/Eboibi2016 (Fig 4, N = 3, cToR = 0.085714) [Re_d = 16800, solidity = 0.26].csv",Eboibi2016 (Fig 4) (N = 3) (cToR = 0.085714) (C003).csv,Eboibi2016 (Fig 4) (N = 3) (cToR = 0.085714) (C003).csv,Use
+,Eboibi et al. [45]/data/5 (N = 3) (cToR = 0.114286).png,Eboibi2016 (Fig 5).png,Eboibi2016 (Fig 5).png,Experimental cp tsr
+Eboibi2016-C004,"Eboibi et al. [45]/data/Eboibi2016 (Fig 5, N = 3, cToR = 0.114286) [Re_d = 16800, solidity = 0.34].csv",Eboibi2016 (Fig 5) (N = 3) (cToR = 0.114286) (C004).csv,Eboibi2016 (Fig 5) (N = 3) (cToR = 0.114286) (C004).csv,Use
+Eboibi2016-C005,"Eboibi et al. [45]/data/Eboibi2016 (Fig 5, N = 3, cToR = 0.114286) [Re_d = 19600, solidity = 0.34].csv",Eboibi2016 (Fig 5) (N = 3) (cToR = 0.114286) (C005).csv,Eboibi2016 (Fig 5) (N = 3) (cToR = 0.114286) (C005).csv,Use
+Eboibi2016-C006,"Eboibi et al. [45]/data/Eboibi2016 (Fig 5, N = 3, cToR = 0.114286) [Re_d = 22400, solidity = 0.34].csv",Eboibi2016 (Fig 5) (N = 3) (cToR = 0.114286) (C006).csv,Eboibi2016 (Fig 5) (N = 3) (cToR = 0.114286) (C006).csv,Use
+,El-Samanoudy et al. [43]/main.pdf,ElSamanoudy2010.pdf,ElSamanoudy2010.pdf,Reference paper
+,El-Samanoudy et al. [43]/data/6 (N = 4) (cToR = 0.375).png,ElSamanoudy2010 (Fig 6).png,ElSamanoudy2010 (Fig 6).png,Experimental cp tsr
+ElSamanoudy2010-C001,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 6, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = -10 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C001).csv,ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C001).csv,Use
+ElSamanoudy2010-C002,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 6, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 0 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C002).csv,ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C002).csv,Use
+ElSamanoudy2010-C003,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 6, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 10 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C003).csv,ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C003).csv,Use
+ElSamanoudy2010-C004,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 6, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 20 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C004).csv,ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C004).csv,Use
+ElSamanoudy2010-C005,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 6, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 30 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C005).csv,ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C005).csv,Use
+ElSamanoudy2010-C006,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 6, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 40 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C006).csv,ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C006).csv,Use
+ElSamanoudy2010-C007,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 6, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 50 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C007).csv,ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C007).csv,Use
+ElSamanoudy2010-C008,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 6, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 60 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C008).csv,ElSamanoudy2010 (Fig 6) (N = 4) (cToR = 0.375) (C008).csv,Use
+,El-Samanoudy et al. [43]/data/7 (N = 4) (cToR = 0.375).png,ElSamanoudy2010 (Fig 7).png,ElSamanoudy2010 (Fig 7).png,Experimental cp tsr
+ElSamanoudy2010-C009,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 7, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = -10 deg, Foil_Profile = NACA4420].csv",ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C009).csv,ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C009).csv,Use
+ElSamanoudy2010-C010,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 7, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 0 deg, Foil_Profile = NACA4420].csv",ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C010).csv,ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C010).csv,Use
+ElSamanoudy2010-C011,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 7, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 10 deg, Foil_Profile = NACA4420].csv",ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C011).csv,ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C011).csv,Use
+ElSamanoudy2010-C012,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 7, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 20 deg, Foil_Profile = NACA4420].csv",ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C012).csv,ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C012).csv,Use
+ElSamanoudy2010-C013,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 7, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 30 deg, Foil_Profile = NACA4420].csv",ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C013).csv,ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C013).csv,Use
+ElSamanoudy2010-C014,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 7, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 40 deg, Foil_Profile = NACA4420].csv",ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C014).csv,ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C014).csv,Use
+ElSamanoudy2010-C015,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 7, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 50 deg, Foil_Profile = NACA4420].csv",ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C015).csv,ElSamanoudy2010 (Fig 7) (N = 4) (cToR = 0.375) (C015).csv,Use
+,"El-Samanoudy et al. [43]/data/10 (N = 2, 4) (cToR = 0.375).png",ElSamanoudy2010 (Fig 10).png,ElSamanoudy2010 (Fig 10).png,Experimental cp tsr
+ElSamanoudy2010-C016,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 10, N = 2, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 10 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 10) (N = 2) (cToR = 0.375) (C016).csv,ElSamanoudy2010 (Fig 10) (N = 2) (cToR = 0.375) (C016).csv,Use
+,"El-Samanoudy et al. [43]/data/11 (N = 2, 3, 4) (cToR = 0.375).png",ElSamanoudy2010 (Fig 11).png,ElSamanoudy2010 (Fig 11).png,Experimental cp tsr (pitch assumed 0 deg)
+ElSamanoudy2010-C017,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 11, N = 2, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, Pitch_status = caption-plot conflict, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 11) (N = 2) (cToR = 0.375) (C018).csv,ElSamanoudy2010 (Fig 11) (N = 2) (cToR = 0.375) (C017).csv,Use
+ElSamanoudy2010-C018,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 11, N = 3, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, Pitch_status = caption-plot conflict, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 11) (N = 3) (cToR = 0.375) (C019).csv,ElSamanoudy2010 (Fig 11) (N = 3) (cToR = 0.375) (C018).csv,Use
+,"El-Samanoudy et al. [43]/data/14 (N = 4) (cToR = 0.375, 0.75).png",ElSamanoudy2010 (Fig 14).png,ElSamanoudy2010 (Fig 14).png,Experimental cp tsr
+ElSamanoudy2010-C019,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 14, N = 4, cToR = 0.75) [Re_D = 213333, Re_basis = estimated, alpha_p = 0 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 14) (N = 4) (cToR = 0.75) (C022).csv,ElSamanoudy2010 (Fig 14) (N = 4) (cToR = 0.75) (C019).csv,Use
+,El-Samanoudy et al. [43]/data/16 (N = 4) (cToR = 0.375).png,ElSamanoudy2010 (Fig 16).png,ElSamanoudy2010 (Fig 16).png,Experimental cp tsr
+ElSamanoudy2010-C020,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 16, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 10 deg, Foil_Profile = NACA4520].csv",ElSamanoudy2010 (Fig 16) (N = 4) (cToR = 0.375) (C025).csv,ElSamanoudy2010 (Fig 16) (N = 4) (cToR = 0.375) (C020).csv,Use
+,El-Samanoudy et al. [43]/data/17 (N = 4) (cToR = 0.375).png,ElSamanoudy2010 (Fig 17).png,ElSamanoudy2010 (Fig 17).png,Experimental cp tsr
+ElSamanoudy2010-C021,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 17, N = 4, cToR = 0.375) [Re_D = 426667, Re_basis = estimated, alpha_p = 0 deg, Foil_Profile = NACA4520].csv",ElSamanoudy2010 (Fig 17) (N = 4) (cToR = 0.375) (C028).csv,ElSamanoudy2010 (Fig 17) (N = 4) (cToR = 0.375) (C021).csv,Use
+,"El-Samanoudy et al. [43]/data/20 (N = 4) (cToR = 0.20, 0.30, 0.375).png",ElSamanoudy2010 (Fig 20).png,ElSamanoudy2010 (Fig 20).png,Experimental cp tsr
+ElSamanoudy2010-C022,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 20, N = 4, cToR = 0.20) [Re_D = 426667, Re_basis = estimated, alpha_p = 10 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 20) (N = 4) (cToR = 0.20) (C029).csv,ElSamanoudy2010 (Fig 20) (N = 4) (cToR = 0.20) (C022).csv,Use
+ElSamanoudy2010-C023,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 20, N = 4, cToR = 0.30) [Re_D = 426667, Re_basis = estimated, alpha_p = 10 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 20) (N = 4) (cToR = 0.30) (C030).csv,ElSamanoudy2010 (Fig 20) (N = 4) (cToR = 0.30) (C023).csv,Use
+,"El-Samanoudy et al. [43]/data/21 (N = 4) (cToR = 0.20, 0.30, 0.375).png",ElSamanoudy2010 (Fig 21).png,ElSamanoudy2010 (Fig 21).png,Experimental cp tsr
+ElSamanoudy2010-C024,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 21, N = 4, cToR = 0.20) [Re_D = 426667, Re_basis = estimated, alpha_p = 0 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 21) (N = 4) (cToR = 0.20) (C032).csv,ElSamanoudy2010 (Fig 21) (N = 4) (cToR = 0.20) (C024).csv,Use
+ElSamanoudy2010-C025,"El-Samanoudy et al. [43]/data/ElSamanoudy2010 (Fig 21, N = 4, cToR = 0.30) [Re_D = 426667, Re_basis = estimated, alpha_p = 0 deg, Foil_Profile = NACA0024].csv",ElSamanoudy2010 (Fig 21) (N = 4) (cToR = 0.30) (C033).csv,ElSamanoudy2010 (Fig 21) (N = 4) (cToR = 0.30) (C025).csv,Use
+,Howell et al. [32]/Wind tunnel and numerical study of a small vertical axis wind turbine.pdf,Howell2010.pdf,Howell2010.pdf,Reference paper
+,Howell et al. [32]/data/7 (N = 2) (cToR = 0.333333).png,Howell2010 (Fig 7).png,Howell2010 (Fig 7).png,Experimental cp tsr
+Howell2010-C001,(not created yet),Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C001).csv,Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C001).csv,Digitize
+Howell2010-C002,(not created yet),Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C002).csv,Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C002).csv,Digitize
+Howell2010-C003,(not created yet),Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C003).csv,Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C003).csv,Digitize
+Howell2010-C004,(not created yet),Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C004).csv,Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C004).csv,Digitize
+Howell2010-C005,(not created yet),Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C005).csv,Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C005).csv,Digitize
+Howell2010-C006,(not created yet),Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C006).csv,Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C006).csv,Digitize
+Howell2010-C007,(not created yet),Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C007).csv,Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C007).csv,Digitize
+Howell2010-C008,(not created yet),Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C008).csv,Howell2010 (Fig 7) (N = 2) (cToR = 0.333333) (C008).csv,Digitize
+,Howell et al. [32]/data/8 (N = 3) (cToR = 0.333333).png,Howell2010 (Fig 8).png,Howell2010 (Fig 8).png,Experimental cp tsr
+Howell2010-C009,(not created yet),Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C009).csv,Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C009).csv,Digitize
+Howell2010-C010,(not created yet),Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C010).csv,Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C010).csv,Digitize
+Howell2010-C011,(not created yet),Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C011).csv,Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C011).csv,Digitize
+Howell2010-C012,(not created yet),Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C012).csv,Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C012).csv,Digitize
+Howell2010-C013,(not created yet),Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C013).csv,Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C013).csv,Digitize
+Howell2010-C014,(not created yet),Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C014).csv,Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C014).csv,Digitize
+Howell2010-C015,(not created yet),Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C015).csv,Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C015).csv,Digitize
+Howell2010-C016,(not created yet),Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C016).csv,Howell2010 (Fig 8) (N = 3) (cToR = 0.333333) (C016).csv,Digitize
+,Howell et al. [32]/data/10 (N = 3) (cToR = 0.333333).png,Howell2010 (Fig 10).png,Howell2010 (Fig 10).png,Mixed experiment cfd
+Howell2010-C017,(not created yet),Howell2010 (Fig 10) (N = 3) (cToR = 0.333333) (C017).csv,Howell2010 (Fig 10) (N = 3) (cToR = 0.333333) (C017).csv,Review possible repeat
+,Howell et al. [32]/data/11 (N = 3) (cToR = 0.333333).png,Howell2010 (Fig 11).png,Howell2010 (Fig 11).png,Mixed experiment cfd
+Howell2010-C018,(not created yet),Howell2010 (Fig 11) (N = 3) (cToR = 0.333333) (C018).csv,Howell2010 (Fig 11) (N = 3) (cToR = 0.333333) (C018).csv,Review possible repeat
+,Howell et al. [32]/data/12 (N = 3) (cToR = 0.333333).png,Howell2010 (Fig 12).png,Howell2010 (Fig 12).png,Mixed experiment cfd
+Howell2010-C019,(not created yet),Howell2010 (Fig 12) (N = 3) (cToR = 0.333333) (C019).csv,Howell2010 (Fig 12) (N = 3) (cToR = 0.333333) (C019).csv,Digitize
+,Li et al. [15]/Effect of number of blades on aerodynamic forces on a straight-bladed Vertical Axis Wind Turbine.pdf,Li2015.pdf,Li2015.pdf,Reference paper
+,Li et al. [15]/data/11a (N = 2) (cToR = 0.265).png,Li2015 (Fig 11a).png,Li2015 (Fig 11a).png,Experimental cp tsr
+Li2015-C001,Li et al. [15]/data/11a (N = 2) (cToR = 0.265) (pitch = 4 deg) (8 m;s).csv,Li2015 (Fig 11a) (N = 2) (cToR = 0.265) (C001).csv,Li2015 (Fig 11a) (N = 2) (cToR = 0.265) (C001).csv,Use
+Li2015-C002,Li et al. [15]/data/11a (N = 2) (cToR = 0.265) (pitch = 6 deg) (8 m;s).csv,Li2015 (Fig 11a) (N = 2) (cToR = 0.265) (C002).csv,Li2015 (Fig 11a) (N = 2) (cToR = 0.265) (C002).csv,Use
+Li2015-C003,Li et al. [15]/data/11a (N = 2) (cToR = 0.265) (pitch = 8 deg) (8 m;s).csv,Li2015 (Fig 11a) (N = 2) (cToR = 0.265) (C003).csv,Li2015 (Fig 11a) (N = 2) (cToR = 0.265) (C003).csv,Use
+,Li et al. [15]/data/11b (N = 3) (cToR = 0.265).png,Li2015 (Fig 11b).png,Li2015 (Fig 11b).png,Experimental cp tsr
+Li2015-C004,Li et al. [15]/data/11b (N = 3) (cToR = 0.265) (pitch = 6 deg) (8 m;s).csv,Li2015 (Fig 11b) (N = 3) (cToR = 0.265) (C004).csv,Li2015 (Fig 11b) (N = 3) (cToR = 0.265) (C004).csv,Use
+Li2015-C005,Li et al. [15]/data/11b (N = 3) (cToR = 0.265) (pitch = 8 deg) (8 m;s).csv,Li2015 (Fig 11b) (N = 3) (cToR = 0.265) (C005).csv,Li2015 (Fig 11b) (N = 3) (cToR = 0.265) (C005).csv,Use
+Li2015-C006,Li et al. [15]/data/11b (N = 3) (cToR = 0.265) (pitch = 10 deg) (8 m;s).csv,Li2015 (Fig 11b) (N = 3) (cToR = 0.265) (C006).csv,Li2015 (Fig 11b) (N = 3) (cToR = 0.265) (C006).csv,Use
+,Li et al. [15]/data/11c (N = 4) (cToR = 0.265).png,Li2015 (Fig 11c).png,Li2015 (Fig 11c).png,Experimental cp tsr
+Li2015-C007,Li et al. [15]/data/11c (N = 4) (cToR = 0.265) (pitch = 6 deg) (8 m;s).csv,Li2015 (Fig 11c) (N = 4) (cToR = 0.265) (C007).csv,Li2015 (Fig 11c) (N = 4) (cToR = 0.265) (C007).csv,Use
+Li2015-C008,Li et al. [15]/data/11c (N = 4) (cToR = 0.265) (pitch = 8 deg) (8 m;s).csv,Li2015 (Fig 11c) (N = 4) (cToR = 0.265) (C008).csv,Li2015 (Fig 11c) (N = 4) (cToR = 0.265) (C008).csv,Use
+Li2015-C009,Li et al. [15]/data/11c (N = 4) (cToR = 0.265) (pitch = 10 deg) (8 m;s).csv,Li2015 (Fig 11c) (N = 4) (cToR = 0.265) (C009).csv,Li2015 (Fig 11c) (N = 4) (cToR = 0.265) (C009).csv,Use
+,Li et al. [15]/data/11d (N = 5) (cToR = 0.265).png,Li2015 (Fig 11d).png,Li2015 (Fig 11d).png,Experimental cp tsr
+Li2015-C010,Li et al. [15]/data/11d (N = 5) (cToR = 0.265) (pitch = 10 deg) (8 m;s).csv,Li2015 (Fig 11d) (N = 5) (cToR = 0.265) (C010).csv,Li2015 (Fig 11d) (N = 5) (cToR = 0.265) (C010).csv,Use
+Li2015-C011,Li et al. [15]/data/11d (N = 5) (cToR = 0.265) (pitch = 12 deg) (8 m;s).csv,Li2015 (Fig 11d) (N = 5) (cToR = 0.265) (C011).csv,Li2015 (Fig 11d) (N = 5) (cToR = 0.265) (C011).csv,Use
+Li2015-C012,Li et al. [15]/data/11d (N = 5) (cToR = 0.265) (pitch = 14 deg) (8 m;s).csv,Li2015 (Fig 11d) (N = 5) (cToR = 0.265) (C012).csv,Li2015 (Fig 11d) (N = 5) (cToR = 0.265) (C012).csv,Use
+Li2015-C013,(not created yet),Li2015 (Fig 12) (N = 2) (cToR = 0.265) (C013).csv,Li2015 (Fig 12) (N = 2) (cToR = 0.265) (C013).csv,Capture figure and compare
+Li2015-C014,(not created yet),Li2015 (Fig 12) (N = 3) (cToR = 0.265) (C014).csv,Li2015 (Fig 12) (N = 3) (cToR = 0.265) (C014).csv,Capture figure and compare
+Li2015-C015,(not created yet),Li2015 (Fig 12) (N = 4) (cToR = 0.265) (C015).csv,Li2015 (Fig 12) (N = 4) (cToR = 0.265) (C015).csv,Capture figure and compare
+Li2015-C016,(not created yet),Li2015 (Fig 12) (N = 5) (cToR = 0.265) (C016).csv,Li2015 (Fig 12) (N = 5) (cToR = 0.265) (C016).csv,Capture figure and compare
+Li2015-C017,(not created yet),Li2015 (Fig 21) (N = 2) (cToR = 0.265) (C017).csv,Li2015 (Fig 21) (N = 2) (cToR = 0.265) (C017).csv,Capture figure and compare
+,"Migliore et al. [4], [38]/migliore-et-al-2012-flow-curvature-effects-on-darrieus-turbine-blade-aerodynamics.pdf",Migliore1980.pdf,Migliore1980.pdf,Reference paper
+,"Migliore et al. [4], [38]/data/11 (N = 2) (cToR = 0.114, 0.260).png",Migliore1980 (Fig 11).png,Migliore1980 (Fig 11).png,Experimental cp tsr
+Migliore1980-C001,"Migliore et al. [4], [38]/data/11 (N = 2) (cToR = 0.114).csv",Migliore1980 (Fig 11) (N = 2) (cToR = 0.114) (C001).csv,Migliore1980 (Fig 11) (N = 2) (cToR = 0.114) (C001).csv,Use
+Migliore1980-C002,"Migliore et al. [4], [38]/data/11 (N = 2) (cToR = 0.260).csv",Migliore1980 (Fig 11) (N = 2) (cToR = 0.260) (C002).csv,Migliore1980 (Fig 11) (N = 2) (cToR = 0.260) (C002).csv,Use
+,Miller et al. [12]/vertical-axis-wind-turbine-experiments-at-full-dynamic-similarity.pdf,Miller2018.pdf,Miller2018.pdf,Reference paper
+,Miller et al. [12]/data/3b (N = 5) (cToR = 0.447826).png,Miller2018 (Fig 3b).png,Miller2018 (Fig 3b).png,Experimental cp tsr
+Miller2018-C001,(not created yet),Miller2018 (Fig 3b) (N = 5) (cToR = 0.447826) (C001).csv,Miller2018 (Fig 3b) (N = 5) (cToR = 0.447826) (C001).csv,Digitize
+Miller2018-C002,(not created yet),Miller2018 (Fig 3b) (N = 5) (cToR = 0.447826) (C002).csv,Miller2018 (Fig 3b) (N = 5) (cToR = 0.447826) (C002).csv,Digitize
+Miller2018-C003,(not created yet),Miller2018 (Fig 3b) (N = 5) (cToR = 0.447826) (C003).csv,Miller2018 (Fig 3b) (N = 5) (cToR = 0.447826) (C003).csv,Digitize
+Miller2018-C004,(not created yet),Miller2018 (Fig 3b) (N = 5) (cToR = 0.447826) (C004).csv,Miller2018 (Fig 3b) (N = 5) (cToR = 0.447826) (C004).csv,Digitize
+,Miller et al. [12]/data/4a (N = 5) (cToR = 0.447826).png,Miller2018 (Fig 4a).png,Miller2018 (Fig 4a).png,Experimental cp tsr
+Miller2018-C005,(not created yet),Miller2018 (Fig 4a) (N = 5) (cToR = 0.447826) (C005).csv,Miller2018 (Fig 4a) (N = 5) (cToR = 0.447826) (C005).csv,Digitize
+Miller2018-C006,(not created yet),Miller2018 (Fig 4a) (N = 5) (cToR = 0.447826) (C006).csv,Miller2018 (Fig 4a) (N = 5) (cToR = 0.447826) (C006).csv,Digitize
+Miller2018-C007,(not created yet),Miller2018 (Fig 4a) (N = 5) (cToR = 0.447826) (C007).csv,Miller2018 (Fig 4a) (N = 5) (cToR = 0.447826) (C007).csv,Digitize
+,Miller et al. [12]/data/4b (N = 5) (cToR = 0.447826).png,Miller2018 (Fig 4b).png,Miller2018 (Fig 4b).png,Experimental cp tsr
+Miller2018-C008,(not created yet),Miller2018 (Fig 4b) (N = 5) (cToR = 0.447826) (C008).csv,Miller2018 (Fig 4b) (N = 5) (cToR = 0.447826) (C008).csv,Digitize
+Miller2018-C009,(not created yet),Miller2018 (Fig 4b) (N = 5) (cToR = 0.447826) (C009).csv,Miller2018 (Fig 4b) (N = 5) (cToR = 0.447826) (C009).csv,Digitize
+Miller2018-C010,(not created yet),Miller2018 (Fig 4b) (N = 5) (cToR = 0.447826) (C010).csv,Miller2018 (Fig 4b) (N = 5) (cToR = 0.447826) (C010).csv,Digitize
+,Miller et al. [12]/data/4c (N = 5) (cToR = 0.447826).png,Miller2018 (Fig 4c).png,Miller2018 (Fig 4c).png,Experimental cp tsr
+Miller2018-C011,(not created yet),Miller2018 (Fig 4c) (N = 5) (cToR = 0.447826) (C011).csv,Miller2018 (Fig 4c) (N = 5) (cToR = 0.447826) (C011).csv,Digitize
+Miller2018-C012,(not created yet),Miller2018 (Fig 4c) (N = 5) (cToR = 0.447826) (C012).csv,Miller2018 (Fig 4c) (N = 5) (cToR = 0.447826) (C012).csv,Digitize
+Miller2018-C013,(not created yet),Miller2018 (Fig 4c) (N = 5) (cToR = 0.447826) (C013).csv,Miller2018 (Fig 4c) (N = 5) (cToR = 0.447826) (C013).csv,Digitize
+,Miller et al. [12]/data/4d (N = 5) (cToR = 0.447826).png,Miller2018 (Fig 4d).png,Miller2018 (Fig 4d).png,Experimental cp tsr
+Miller2018-C014,(not created yet),Miller2018 (Fig 4d) (N = 5) (cToR = 0.447826) (C014).csv,Miller2018 (Fig 4d) (N = 5) (cToR = 0.447826) (C014).csv,Digitize
+Miller2018-C015,(not created yet),Miller2018 (Fig 4d) (N = 5) (cToR = 0.447826) (C015).csv,Miller2018 (Fig 4d) (N = 5) (cToR = 0.447826) (C015).csv,Digitize
+Miller2018-C016,(not created yet),Miller2018 (Fig 4d) (N = 5) (cToR = 0.447826) (C016).csv,Miller2018 (Fig 4d) (N = 5) (cToR = 0.447826) (C016).csv,Digitize
+,Miller et al. [12]/data/4e (N = 5) (cToR = 0.447826).png,Miller2018 (Fig 4e).png,Miller2018 (Fig 4e).png,Experimental cp tsr
+Miller2018-C017,(not created yet),Miller2018 (Fig 4e) (N = 5) (cToR = 0.447826) (C017).csv,Miller2018 (Fig 4e) (N = 5) (cToR = 0.447826) (C017).csv,Digitize
+Miller2018-C018,(not created yet),Miller2018 (Fig 4e) (N = 5) (cToR = 0.447826) (C018).csv,Miller2018 (Fig 4e) (N = 5) (cToR = 0.447826) (C018).csv,Digitize
+Miller2018-C019,(not created yet),Miller2018 (Fig 4e) (N = 5) (cToR = 0.447826) (C019).csv,Miller2018 (Fig 4e) (N = 5) (cToR = 0.447826) (C019).csv,Digitize
+,Miller et al. [12]/data/4f (N = 5) (cToR = 0.447826).png,Miller2018 (Fig 4f).png,Miller2018 (Fig 4f).png,Experimental cp tsr
+Miller2018-C020,(not created yet),Miller2018 (Fig 4f) (N = 5) (cToR = 0.447826) (C020).csv,Miller2018 (Fig 4f) (N = 5) (cToR = 0.447826) (C020).csv,Digitize
+Miller2018-C021,(not created yet),Miller2018 (Fig 4f) (N = 5) (cToR = 0.447826) (C021).csv,Miller2018 (Fig 4f) (N = 5) (cToR = 0.447826) (C021).csv,Digitize
+Miller2018-C022,(not created yet),Miller2018 (Fig 4f) (N = 5) (cToR = 0.447826) (C022).csv,Miller2018 (Fig 4f) (N = 5) (cToR = 0.447826) (C022).csv,Digitize
+,Miller et al. [12]/data/5 (N = 5) (cToR = 0.447826).png,Miller2018 (Fig 5).png,Miller2018 (Fig 5).png,Mixed field tunnel review
+,Miller et al. [12]/data/9 (N = 5) (cToR = 0.447826).png,Miller2018 (Fig 9).png,Miller2018 (Fig 9).png,Derived exclude primary
+,Somoano and Huera-Huarte [49]/The dead band in the performance of cross-flow turbines_ Effects of Reynolds number and blade pitch.pdf,SomoanoHueraHuarte2018.pdf,SomoanoHueraHuarte2018.pdf,Reference paper
+,Somoano and Huera-Huarte [49]/data/2d (N = 3) (cToR = 0.32).png,SomoanoHueraHuarte2018 (Fig 2d).png,SomoanoHueraHuarte2018 (Fig 2d).png,Method example hold
+,Somoano and Huera-Huarte [49]/data/3 (N = 3) (cToR = 0.32).png,SomoanoHueraHuarte2018 (Fig 3).png,SomoanoHueraHuarte2018 (Fig 3).png,Repeat and nontarget
+,Somoano and Huera-Huarte [49]/data/4 (N = 3) (cToR = 0.32).png,SomoanoHueraHuarte2018 (Fig 4).png,SomoanoHueraHuarte2018 (Fig 4).png,Experimental cp tsr
+SomoanoHueraHuarte2018-C001,(not created yet),SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C001).csv,SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C001).csv,Digitize
+SomoanoHueraHuarte2018-C002,(not created yet),SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C002).csv,SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C002).csv,Digitize
+SomoanoHueraHuarte2018-C003,(not created yet),SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C003).csv,SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C003).csv,Digitize
+SomoanoHueraHuarte2018-C004,(not created yet),SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C004).csv,SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C004).csv,Digitize
+SomoanoHueraHuarte2018-C005,(not created yet),SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C005).csv,SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C005).csv,Digitize
+SomoanoHueraHuarte2018-C006,(not created yet),SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C006).csv,SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C006).csv,Digitize
+SomoanoHueraHuarte2018-C007,(not created yet),SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C007).csv,SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C007).csv,Digitize
+SomoanoHueraHuarte2018-C008,(not created yet),SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C008).csv,SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C008).csv,Digitize
+SomoanoHueraHuarte2018-C009,(not created yet),SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C009).csv,SomoanoHueraHuarte2018 (Fig 4) (N = 3) (cToR = 0.32) (C009).csv,Digitize
+,Somoano and Huera-Huarte [49]/data/5 (N = 3) (cToR = 0.32).png,SomoanoHueraHuarte2018 (Fig 5).png,SomoanoHueraHuarte2018 (Fig 5).png,Experimental cp tsr
+SomoanoHueraHuarte2018-C010,(not created yet),SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C010).csv,SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C010).csv,Digitize
+SomoanoHueraHuarte2018-C011,(not created yet),SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C011).csv,SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C011).csv,Digitize
+SomoanoHueraHuarte2018-C012,(not created yet),SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C012).csv,SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C012).csv,Digitize
+SomoanoHueraHuarte2018-C013,(not created yet),SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C013).csv,SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C013).csv,Digitize
+SomoanoHueraHuarte2018-C014,(not created yet),SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C014).csv,SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C014).csv,Digitize
+SomoanoHueraHuarte2018-C015,(not created yet),SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C015).csv,SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C015).csv,Digitize
+SomoanoHueraHuarte2018-C016,(not created yet),SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C016).csv,SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C016).csv,Digitize
+SomoanoHueraHuarte2018-C017,(not created yet),SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C017).csv,SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C017).csv,Digitize
+SomoanoHueraHuarte2018-C018,(not created yet),SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C018).csv,SomoanoHueraHuarte2018 (Fig 5) (N = 3) (cToR = 0.32) (C018).csv,Digitize
+,Somoano and Huera-Huarte [49]/data/6 (N = 3) (cToR = 0.32).png,SomoanoHueraHuarte2018 (Fig 6).png,SomoanoHueraHuarte2018 (Fig 6).png,Experimental cp tsr
+SomoanoHueraHuarte2018-C019,(not created yet),SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C019).csv,SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C019).csv,Digitize
+SomoanoHueraHuarte2018-C020,(not created yet),SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C020).csv,SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C020).csv,Digitize
+SomoanoHueraHuarte2018-C021,(not created yet),SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C021).csv,SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C021).csv,Digitize
+SomoanoHueraHuarte2018-C022,(not created yet),SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C022).csv,SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C022).csv,Digitize
+SomoanoHueraHuarte2018-C023,(not created yet),SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C023).csv,SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C023).csv,Digitize
+SomoanoHueraHuarte2018-C024,(not created yet),SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C024).csv,SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C024).csv,Digitize
+SomoanoHueraHuarte2018-C025,(not created yet),SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C025).csv,SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C025).csv,Digitize
+SomoanoHueraHuarte2018-C026,(not created yet),SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C026).csv,SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C026).csv,Digitize
+SomoanoHueraHuarte2018-C027,(not created yet),SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C027).csv,SomoanoHueraHuarte2018 (Fig 6) (N = 3) (cToR = 0.32) (C027).csv,Digitize
