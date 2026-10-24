@@ -1,53 +1,53 @@
-"Curve_ID","current_file","previous_filename","new_filename","Action"
-"","Normalized performance and load data for the deepwind demonstrator in controlled conditions - main.pdf","","Battisti2016.pdf","Reference paper"
-"Battisti2016-C001","Not created yet","Battisti2016 (Table 1) C001.csv","Battisti2016 (Table 1) (N = 3) (cToR = unknown) (C001).csv","Review geometry"
-"Battisti2016-C002","Not created yet","Battisti2016 (Table 2) C002.csv","Battisti2016 (Table 2) (N = 3) (cToR = unknown) (C002).csv","Review geometry"
-"Battisti2016-C003","Not created yet","Battisti2016 (Table 3) C003.csv","Battisti2016 (Table 3) (N = 3) (cToR = unknown) (C003).csv","Review geometry"
-"Battisti2016-C004","Not created yet","Battisti2016 (Table 4) C004.csv","Battisti2016 (Table 4) (N = 3) (cToR = unknown) (C004).csv","Review geometry"
-"","","","",""
-"","Experimental benchmark data for H-shaped and troposkien VAWT architectures - Experimental+benchmark.pdf","","Battisti2018.pdf","Reference paper"
-"Battisti2018-C001","Not created yet","Battisti2018 (Table 9) C005.csv","Battisti2018 (Table 9) (N = 3) (cToR = 0.112583) (C001).csv","Use"
-"","","","",""
-"","7269797.pdf","","Blackwell1976.pdf","Reference paper"
-"Blackwell1976-C001","Not created yet","Blackwell1976 (Fig 6) C006.csv","Blackwell1976 (Fig 6) (N = 3) (cToR = 0.089967) (C001).csv","Use"
-"Blackwell1976-C002","Not created yet","Blackwell1976 (Fig 6) C007.csv","Blackwell1976 (Fig 6) (N = 3) (cToR = 0.089967) (C002).csv","Use"
-"Blackwell1976-C003","Not created yet","Blackwell1976 (Fig 6) C008.csv","Blackwell1976 (Fig 6) (N = 3) (cToR = 0.089967) (C003).csv","Use"
-"Blackwell1976-C004","Not created yet","Blackwell1976 (Fig 7) C009.csv","Blackwell1976 (Fig 7) (N = 3) (cToR = 0.074974) (C004).csv","Use"
-"Blackwell1976-C005","Not created yet","Blackwell1976 (Fig 7) C010.csv","Blackwell1976 (Fig 7) (N = 3) (cToR = 0.074974) (C005).csv","Use"
-"Blackwell1976-C006","Not created yet","Blackwell1976 (Fig 7) C011.csv","Blackwell1976 (Fig 7) (N = 3) (cToR = 0.074974) (C006).csv","Use"
-"Blackwell1976-C007","Not created yet","Blackwell1976 (Fig 8) C012.csv","Blackwell1976 (Fig 8) (N = 3) (cToR = 0.059982) (C007).csv","Use"
-"Blackwell1976-C008","Not created yet","Blackwell1976 (Fig 8) C013.csv","Blackwell1976 (Fig 8) (N = 3) (cToR = 0.059982) (C008).csv","Use"
-"Blackwell1976-C009","Not created yet","Blackwell1976 (Fig 8) C014.csv","Blackwell1976 (Fig 8) (N = 3) (cToR = 0.059982) (C009).csv","Use"
-"Blackwell1976-C010","Not created yet","Blackwell1976 (Fig 9) C015.csv","Blackwell1976 (Fig 9) (N = 2) (cToR = 0.089967) (C010).csv","Use"
-"Blackwell1976-C011","Not created yet","Blackwell1976 (Fig 9) C016.csv","Blackwell1976 (Fig 9) (N = 2) (cToR = 0.089967) (C011).csv","Use"
-"Blackwell1976-C012","Not created yet","Blackwell1976 (Fig 9) C017.csv","Blackwell1976 (Fig 9) (N = 2) (cToR = 0.089967) (C012).csv","Use"
-"Blackwell1976-C013","Not created yet","Blackwell1976 (Fig 9) C018.csv","Blackwell1976 (Fig 9) (N = 2) (cToR = 0.089967) (C013).csv","Use"
-"Blackwell1976-C014","Not created yet","Blackwell1976 (Fig 10) C019.csv","Blackwell1976 (Fig 10) (N = 2) (cToR = 0.059982) (C014).csv","Use"
-"Blackwell1976-C015","Not created yet","Blackwell1976 (Fig 10) C020.csv","Blackwell1976 (Fig 10) (N = 2) (cToR = 0.059982) (C015).csv","Use"
-"Blackwell1976-C016","Not created yet","Blackwell1976 (Fig 10) C021.csv","Blackwell1976 (Fig 10) (N = 2) (cToR = 0.059982) (C016).csv","Use"
-"Blackwell1976-C017","Not created yet","Blackwell1976 (Fig 15) C022.csv","Blackwell1976 (Fig 15) (N = 3) (cToR = 0.089967) (C017).csv","Use"
-"Blackwell1976-C018","Not created yet","Blackwell1976 (Fig 15) C023.csv","Blackwell1976 (Fig 15) (N = 3) (cToR = 0.089967) (C018).csv","Use"
-"Blackwell1976-C019","Not created yet","Blackwell1976 (Fig 16) C024.csv","Blackwell1976 (Fig 16) (N = 3) (cToR = 0.074974) (C019).csv","Use"
-"Blackwell1976-C020","Not created yet","Blackwell1976 (Fig 16) C025.csv","Blackwell1976 (Fig 16) (N = 3) (cToR = 0.074974) (C020).csv","Use"
-"Blackwell1976-C021","Not created yet","Blackwell1976 (Fig 17) C026.csv","Blackwell1976 (Fig 17) (N = 3) (cToR = 0.059982) (C021).csv","Use"
-"Blackwell1976-C022","Not created yet","Blackwell1976 (Fig 17) C027.csv","Blackwell1976 (Fig 17) (N = 3) (cToR = 0.059982) (C022).csv","Use"
-"Blackwell1976-C023","Not created yet","Blackwell1976 (Fig 18) C028.csv","Blackwell1976 (Fig 18) (N = 2) (cToR = 0.089967) (C023).csv","Use"
-"Blackwell1976-C024","Not created yet","Blackwell1976 (Fig 18) C029.csv","Blackwell1976 (Fig 18) (N = 2) (cToR = 0.089967) (C024).csv","Use"
-"Blackwell1976-C025","Not created yet","Blackwell1976 (Fig 19) C030.csv","Blackwell1976 (Fig 19) (N = 2) (cToR = 0.059982) (C025).csv","Use"
-"Blackwell1976-C026","Not created yet","Blackwell1976 (Fig 19) C031.csv","Blackwell1976 (Fig 19) (N = 2) (cToR = 0.059982) (C026).csv","Use"
-"","","","",""
-"","19760012463.pdf","","Muraca1976.pdf","Reference paper"
-"Muraca1976-C001","Not created yet","Muraca1976 (Fig 8) C032.csv","Muraca1976 (Fig 8) (N = 2) (cToR = 0.066429) (C001).csv","Use"
-"","","","",""
-"","5265052.pdf","","Sheldahl1977.pdf","Reference paper"
-"Sheldahl1977-C001","Not created yet","Sheldahl1977 (Fig 9) C034.csv","Sheldahl1977 (Fig 9) (N = 3) (cToR = unknown) (C001).csv","Review geometry"
-"Sheldahl1977-C002","Not created yet","Sheldahl1977 (Fig 9) C036.csv","Sheldahl1977 (Fig 9) (N = 3) (cToR = unknown) (C002).csv","Review geometry"
-"Sheldahl1977-C003","Not created yet","Sheldahl1977 (Fig 9) C033.csv","Sheldahl1977 (Fig 9) (N = 3) (cToR = unknown) (C003).csv","Review geometry"
-"Sheldahl1977-C004","Not created yet","Sheldahl1977 (Fig 9) C035.csv","Sheldahl1977 (Fig 9) (N = 3) (cToR = unknown) (C004).csv","Review geometry"
-"","","","",""
-"","Aerodynamic performance of a 5 metre diameter Darrieus turbine with extruded aluminium NACA 0015 blades - Sandia Labs - 1980.pdf","","Sheldahl1980.pdf","Reference paper"
-"Sheldahl1980-C001","Not created yet","Sheldahl1980 (Fig 7) C037.csv","Sheldahl1980 (Fig 7) (N = 3) (cToR = 0.067) (C001).csv","Use"
-"Sheldahl1980-C002","Not created yet","Sheldahl1980 (Fig 7) C038.csv","Sheldahl1980 (Fig 7) (N = 3) (cToR = 0.067) (C002).csv","Use"
-"Sheldahl1980-C003","Not created yet","Sheldahl1980 (Fig 7) C039.csv","Sheldahl1980 (Fig 7) (N = 3) (cToR = 0.067) (C003).csv","Use"
-"Sheldahl1980-C004","Not created yet","Sheldahl1980 (Fig 9) C040.csv","Sheldahl1980 (Fig 9) (N = 2) (cToR = 0.067) (C004).csv","Use"
-"Sheldahl1980-C005","Not created yet","Sheldahl1980 (Fig 9) C041.csv","Sheldahl1980 (Fig 9) (N = 2) (cToR = 0.067) (C005).csv","Use"
+Curve_ID,current_file,previous_filename,new_filename,Action
+,Normalized performance and load data for the deepwind demonstrator in controlled conditions - main.pdf,,Battisti2016.pdf,Reference paper
+Battisti2016-C001,Not created yet,Battisti2016 (Tab 1) C001.csv,Battisti2016 (Tab 1) (N = 3) (cToR = unknown) (C001).csv,Review geometry
+Battisti2016-C002,Not created yet,Battisti2016 (Tab 2) C002.csv,Battisti2016 (Tab 2) (N = 3) (cToR = unknown) (C002).csv,Review geometry
+Battisti2016-C003,Not created yet,Battisti2016 (Tab 3) C003.csv,Battisti2016 (Tab 3) (N = 3) (cToR = unknown) (C003).csv,Review geometry
+Battisti2016-C004,Not created yet,Battisti2016 (Tab 4) C004.csv,Battisti2016 (Tab 4) (N = 3) (cToR = unknown) (C004).csv,Review geometry
+,,,,
+,Experimental benchmark data for H-shaped and troposkien VAWT architectures - Experimental+benchmark.pdf,,Battisti2018.pdf,Reference paper
+Battisti2018-C001,Not created yet,Battisti2018 (Tab 9) C005.csv,Battisti2018 (Tab 9) (N = 3) (cToR = 0.112583) (C001).csv,Use
+,,,,
+,7269797.pdf,,Blackwell1976.pdf,Reference paper
+Blackwell1976-C001,Not created yet,Blackwell1976 (Fig 6) C006.csv,Blackwell1976 (Fig 6) (N = 3) (cToR = 0.089967) (C001).csv,Use
+Blackwell1976-C002,Not created yet,Blackwell1976 (Fig 6) C007.csv,Blackwell1976 (Fig 6) (N = 3) (cToR = 0.089967) (C002).csv,Use
+Blackwell1976-C003,Not created yet,Blackwell1976 (Fig 6) C008.csv,Blackwell1976 (Fig 6) (N = 3) (cToR = 0.089967) (C003).csv,Use
+Blackwell1976-C004,Not created yet,Blackwell1976 (Fig 7) C009.csv,Blackwell1976 (Fig 7) (N = 3) (cToR = 0.074974) (C004).csv,Use
+Blackwell1976-C005,Not created yet,Blackwell1976 (Fig 7) C010.csv,Blackwell1976 (Fig 7) (N = 3) (cToR = 0.074974) (C005).csv,Use
+Blackwell1976-C006,Not created yet,Blackwell1976 (Fig 7) C011.csv,Blackwell1976 (Fig 7) (N = 3) (cToR = 0.074974) (C006).csv,Use
+Blackwell1976-C007,Not created yet,Blackwell1976 (Fig 8) C012.csv,Blackwell1976 (Fig 8) (N = 3) (cToR = 0.059982) (C007).csv,Use
+Blackwell1976-C008,Not created yet,Blackwell1976 (Fig 8) C013.csv,Blackwell1976 (Fig 8) (N = 3) (cToR = 0.059982) (C008).csv,Use
+Blackwell1976-C009,Not created yet,Blackwell1976 (Fig 8) C014.csv,Blackwell1976 (Fig 8) (N = 3) (cToR = 0.059982) (C009).csv,Use
+Blackwell1976-C010,Not created yet,Blackwell1976 (Fig 9) C015.csv,Blackwell1976 (Fig 9) (N = 2) (cToR = 0.089967) (C010).csv,Use
+Blackwell1976-C011,Not created yet,Blackwell1976 (Fig 9) C016.csv,Blackwell1976 (Fig 9) (N = 2) (cToR = 0.089967) (C011).csv,Use
+Blackwell1976-C012,Not created yet,Blackwell1976 (Fig 9) C017.csv,Blackwell1976 (Fig 9) (N = 2) (cToR = 0.089967) (C012).csv,Use
+Blackwell1976-C013,Not created yet,Blackwell1976 (Fig 9) C018.csv,Blackwell1976 (Fig 9) (N = 2) (cToR = 0.089967) (C013).csv,Use
+Blackwell1976-C014,Not created yet,Blackwell1976 (Fig 10) C019.csv,Blackwell1976 (Fig 10) (N = 2) (cToR = 0.059982) (C014).csv,Use
+Blackwell1976-C015,Not created yet,Blackwell1976 (Fig 10) C020.csv,Blackwell1976 (Fig 10) (N = 2) (cToR = 0.059982) (C015).csv,Use
+Blackwell1976-C016,Not created yet,Blackwell1976 (Fig 10) C021.csv,Blackwell1976 (Fig 10) (N = 2) (cToR = 0.059982) (C016).csv,Use
+Blackwell1976-C017,Not created yet,Blackwell1976 (Fig 15) C022.csv,Blackwell1976 (Fig 15) (N = 3) (cToR = 0.089967) (C017).csv,Use
+Blackwell1976-C018,Not created yet,Blackwell1976 (Fig 15) C023.csv,Blackwell1976 (Fig 15) (N = 3) (cToR = 0.089967) (C018).csv,Use
+Blackwell1976-C019,Not created yet,Blackwell1976 (Fig 16) C024.csv,Blackwell1976 (Fig 16) (N = 3) (cToR = 0.074974) (C019).csv,Use
+Blackwell1976-C020,Not created yet,Blackwell1976 (Fig 16) C025.csv,Blackwell1976 (Fig 16) (N = 3) (cToR = 0.074974) (C020).csv,Use
+Blackwell1976-C021,Not created yet,Blackwell1976 (Fig 17) C026.csv,Blackwell1976 (Fig 17) (N = 3) (cToR = 0.059982) (C021).csv,Use
+Blackwell1976-C022,Not created yet,Blackwell1976 (Fig 17) C027.csv,Blackwell1976 (Fig 17) (N = 3) (cToR = 0.059982) (C022).csv,Use
+Blackwell1976-C023,Not created yet,Blackwell1976 (Fig 18) C028.csv,Blackwell1976 (Fig 18) (N = 2) (cToR = 0.089967) (C023).csv,Use
+Blackwell1976-C024,Not created yet,Blackwell1976 (Fig 18) C029.csv,Blackwell1976 (Fig 18) (N = 2) (cToR = 0.089967) (C024).csv,Use
+Blackwell1976-C025,Not created yet,Blackwell1976 (Fig 19) C030.csv,Blackwell1976 (Fig 19) (N = 2) (cToR = 0.059982) (C025).csv,Use
+Blackwell1976-C026,Not created yet,Blackwell1976 (Fig 19) C031.csv,Blackwell1976 (Fig 19) (N = 2) (cToR = 0.059982) (C026).csv,Use
+,,,,
+,19760012463.pdf,,Muraca1976.pdf,Reference paper
+Muraca1976-C001,Not created yet,Muraca1976 (Fig 8) C032.csv,Muraca1976 (Fig 8) (N = 2) (cToR = 0.066429) (C001).csv,Use
+,,,,
+,5265052.pdf,,Sheldahl1977.pdf,Reference paper
+Sheldahl1977-C001,Not created yet,Sheldahl1977 (Fig 9) C034.csv,Sheldahl1977 (Fig 9) (N = 3) (cToR = unknown) (C001).csv,Review geometry
+Sheldahl1977-C002,Not created yet,Sheldahl1977 (Fig 9) C036.csv,Sheldahl1977 (Fig 9) (N = 3) (cToR = unknown) (C002).csv,Review geometry
+Sheldahl1977-C003,Not created yet,Sheldahl1977 (Fig 9) C033.csv,Sheldahl1977 (Fig 9) (N = 3) (cToR = unknown) (C003).csv,Review geometry
+Sheldahl1977-C004,Not created yet,Sheldahl1977 (Fig 9) C035.csv,Sheldahl1977 (Fig 9) (N = 3) (cToR = unknown) (C004).csv,Review geometry
+,,,,
+,Aerodynamic performance of a 5 metre diameter Darrieus turbine with extruded aluminium NACA 0015 blades - Sandia Labs - 1980.pdf,,Sheldahl1980.pdf,Reference paper
+Sheldahl1980-C001,Not created yet,Sheldahl1980 (Fig 7) C037.csv,Sheldahl1980 (Fig 7) (N = 3) (cToR = 0.067) (C001).csv,Use
+Sheldahl1980-C002,Not created yet,Sheldahl1980 (Fig 7) C038.csv,Sheldahl1980 (Fig 7) (N = 3) (cToR = 0.067) (C002).csv,Use
+Sheldahl1980-C003,Not created yet,Sheldahl1980 (Fig 7) C039.csv,Sheldahl1980 (Fig 7) (N = 3) (cToR = 0.067) (C003).csv,Use
+Sheldahl1980-C004,Not created yet,Sheldahl1980 (Fig 9) C040.csv,Sheldahl1980 (Fig 9) (N = 2) (cToR = 0.067) (C004).csv,Use
+Sheldahl1980-C005,Not created yet,Sheldahl1980 (Fig 9) C041.csv,Sheldahl1980 (Fig 9) (N = 2) (cToR = 0.067) (C005).csv,Use
