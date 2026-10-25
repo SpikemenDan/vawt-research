@@ -5,7 +5,7 @@
 - metadata_troposkein.csv: one row per retained experimental curve, using exactly the default metadata columns and their order.
 - rename_map_troposkein.csv: the default five columns; includes six supplied PDFs and 41 planned curve CSVs. No screenshots or extracted performance CSVs were supplied for this six-paper set. “Not created yet” is literal; these rows are extraction targets.
 
-Filename: `SourceYear (Fig 4) (N = 3) (cToR = 0.085714) (C001).csv`. Numerical-table sources use `Table` instead of `Fig`.
+Filename: `SourceYear (Fig 4) (N = 3) (cToR = 0.085714) (C001).csv`. Numerical-table filenames use your supplied `Tab` abbreviation instead of `Fig`.
 
 Curve_ID is `SourceYear-C001`. C-numbers restart at C001 for each source. These replace the earlier globally numbered troposkein IDs. `previous_filename` records that earlier proposal; `current_file` is either the actual supplied PDF name or “Not created yet”. IDs are now assigned in source/figure/condition order. Preserve them when adding future data.
 
@@ -172,8 +172,8 @@ No additional viscosity assumption is needed when converting an applicable, know
 | Battisti2018, Table 9 | Wind speed varies. Calculate Re_D for each table row using R=0.755 m, its U and density, and viscosity estimated from its temperature with a documented property model. Table 6’s 174350 is a nominal zero-wind rotational reference, not a measured constant Re_D for the performance curve. |
 | Blackwell1976, Figs 6-10 | Fixed rotational chord Reynolds-number runs with changing freestream speed. Use Re_D(TSR)=2 Re_rot/[(c/R) TSR] point by point, retaining the source’s correction conventions. |
 | Blackwell1976, Figs 15-19 | Fixed wind-speed runs with changing rpm. Re_D may be represented by a constant per curve if fluid properties are treated as constant. An estimate can be made from the reported speed and R=0.9798 m using explicitly stated air properties. These estimates are now entered in metadata; see the final section. |
-| Muraca1976, Fig 8 | Open-circle data pool test speeds. Do not assign one constant Re_D or infer separate speeds from identical markers. Reconstruct point conditions from Table I if a reliable measurement-to-point mapping can be established. |
-| Sheldahl1977, Fig 9 | Fixed-rpm campaigns with varying wind speed. Conversion is pointwise and requires a verified equatorial c/R consistent with the source Re definition. Mixed blade chords must not be collapsed into an undocumented uniform geometry. |
+| Muraca1976, Fig 8 | Table I (PDF p18) supplies wind speed, Cp and TSR together. Use its complete rows directly to calculate Re_D=284480*U_m_s with assumed nu=1.50e-5 m2/s; no graphical point-matching is needed. Fig 8 pools speeds, so do not assign one curve-wide constant. |
+| Sheldahl1977, Fig 9 | Fixed-rpm campaigns with varying wind speed. Using nominal D=5 m, R=2.5 m and recorded rpm, estimate U=(2*pi*rpm/60)*R/TSR and then Re_D=U*D/nu. Label nominal-diameter and viscosity assumptions explicitly. This route does not require a uniform blade chord; precise c/R remains unresolved. |
 | Sheldahl1980, Figs 7 and 9 | Fixed-rpm campaigns with varying wind speed. Convert point by point from reported rotational chord Re and reported c/R=0.067. The result inherits the reported ratio’s rounding and the geometry discrepancy already flagged. |
 
 ### Is this true for all sources?
@@ -228,7 +228,7 @@ For the remaining calculable cases, the following expressions produce a Re_D for
 | Blackwell1976-C014 | 3578932.324/TSR; nominal-air estimate |
 | Blackwell1976-C015 | 5361696.366/TSR; nominal-air estimate |
 | Blackwell1976-C016 | 7037226.480/TSR; nominal-air estimate |
-| Muraca1976-C001 | 284480*U_m_s; nominal-air estimate; requires point provenance |
+| Muraca1976-C001 | 284480*U_m_s; nominal-air estimate; use complete Table I rows (PDF p18) |
 | Sheldahl1980-C001 | 7462686.567/TSR; reported-Re_rot conversion; source rounded geometry |
 | Sheldahl1980-C002 | 8358208.955/TSR; reported-Re_rot conversion; source rounded geometry |
 | Sheldahl1980-C003 | 8955223.881/TSR; reported-Re_rot conversion; source rounded geometry |
@@ -237,6 +237,31 @@ For the remaining calculable cases, the following expressions produce a Re_D for
 
 Battisti2018: use measured U from each Table 9 row. Its speed range gives approximately 3.171e5 to 2.01434e6 for this assumed nu. For Blackwell fixed-rpm curves, the new nominal-air expression and the existing reported-Re_rot conversion are alternative estimates; they can differ because the source Re and assumed properties need not coincide. Preserve reported Re_rot and consistently identify which method is used.
 
-Muraca: the numerical U-to-Re factor is established, but a reliable wind-speed assignment to each plotted point is still needed. Battisti2016 and Sheldahl1977 still require verified geometry. Assumed viscosity alone cannot recover unknown radius or chord ratio. Sheldahl1980 uses the reported-Re_rot conversion without imposing sea-level viscosity on the 1658-m field site; the source geometry discrepancy remains flagged.
+Muraca: Table I already pairs wind speed with Cp and TSR, so its complete rows directly support pointwise Re_D. Battisti2016 still needs geometry. Sheldahl1977 permits an approximate diameter-based calculation using nominal D=5 m, even though precise c/R remains unresolved. Sheldahl1980 uses the reported-Re_rot conversion without imposing sea-level viscosity on the 1658-m field site; the source geometry discrepancy remains flagged.
 
 Validation: 10 populated constant Re_D values; 41 curve IDs retained; five source separator rows retained; filenames and rename map unchanged. Estimates checked using both U D/nu and rho U D/mu. No performance measurements were altered.
+
+## Confirmed routes to Re_D — 25 October 2026
+
+This follow-up corrects the earlier over-restriction on Muraca and distinguishes an approximate nominal-diameter estimate for Sheldahl1977 from a verified c/R. It documents available calculations; it does not claim new per-point performance CSVs have been generated.
+
+| Source | Available calculation and evidence |
+|---|---|
+| Battisti2016 | Reported Re_rot and TSR allow Re_D=2 Re_rot/[(c/R) TSR] only after c/R is verified. The data article alone does not establish the required geometry. Obtain the companion geometry paper. |
+| Battisti2018 | Table 9 exists at PDF p19, printed p443, above the references. It is titled “Measured data for the troposkien rotor.” With D=1.51 m and assumed nu=1.50e-5 m2/s, Re_D=100666.67*U_m_s for each row. |
+| Blackwell1976 | Fixed-U Figs 15-19 support constant estimated Re_D. Fixed-rpm Figs 6-10 support pointwise conversion using reported rotational Re and c/R, or the separately documented nominal-air rpm/radius method. Preserve the source velocity correction convention. |
+| Muraca1976 | Table I, PDF p18, includes wind speed, rpm, Cp and TSR in matching rows. With D=4.2672 m and assumed nu=1.50e-5 m2/s, Re_D=284480*U_m_s. Prefer the numerical table over digitizing Fig 8. Run 105 has blank performance entries: do not invent Cp or TSR for that row. |
+| Sheldahl1977 | A nominal-geometry estimate is possible with D=5 m, R=2.5 m and campaign rpm: Re_D(TSR)=2*(2*pi*rpm/60)*R^2/(nu*TSR). This explicitly assumes the nominal diameter as the geometric value. Variable chord does not obstruct a diameter Reynolds calculation. Precise c/R and blade-area solidity remain separate unresolved questions. |
+| Sheldahl1980 | Re_D(TSR)=2 Re_rot/(0.067*TSR), using the reported rotational chord Reynolds number and source c/R. No additional viscosity assumption is needed. The reported c/R versus nominal-diameter discrepancy remains flagged. |
+
+For Sheldahl1977, nominal-diameter estimates also inherit the limitations of assuming constant air viscosity at a field site. They are estimates, not reconstructed measured Reynolds numbers. Do not use the nominal geometry to silently fill cToR or claim a uniform chord.
+
+The same calculation cannot be applied blindly to every paper. Verify which velocity and length define its Reynolds number and whether those conditions change along the curve. A reference Re_D at peak Cp is not a constant for the full curve.
+
+## Uploaded-copy reconciliation — 25 October 2026
+
+Updated the supplied copies to include the confirmed Muraca Table I route and the optional Sheldahl1977 nominal-diameter estimate. Preserved all 41 curve IDs, filenames (including Tab), Actions, and the five source separator rows. The rename map was already consistent and is unchanged. Muraca retains its Fig 8 filename as a stable identifier, but the numerical Table I rows are now the preferred extraction source.
+
+The 12-row source catalogue now reflects the six audited papers. The other six entries remain supporting publications or research leads; they are not additional datasets in the 41-curve metadata. Their external links and availability were not reverified during this file reconciliation.
+
+The PDF and this log incorporate the latest nominal-air assumptions and source-specific calculations. Constant Re_D remains populated for ten Blackwell fixed-speed curves only. The optional Sheldahl1977 formula explicitly depends on nominal diameter; it does not establish precise geometry or add a constant Re_D. No extracted performance CSVs were generated or changed.
