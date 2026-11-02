@@ -1,74 +1,84 @@
-# Short filenames, metadata, and decisions
+# Default VAWT: management log
 
-## Use these two tables
+Straight-bladed (H-type) and other non-troposkien rotors. Last updated 2026-11-02.
 
-- rename_map.csv: original relative path, previous proposed filename, newly sorted filename, Curve_ID and action. Includes 87 existing research assets after removal of nine reference-only CSV entries, plus 73 planned curve files. “Not created yet” means a filename suggestion, not a completed CSV.
-- metadata.csv: one row per retained curve (45 existing + 73 planned). Match by filename. Copy the needed column headings and values into the experimental CSV and fill the same constants down every data row. Blank means unknown/not assigned, never zero. Keep TSR and Cp as your varying measurement columns. Action and Notes are documentation, not numerical model inputs.
+## 1. Files in this folder
 
-Example: SourceYear (Fig 4) (N = 3) (cToR = 0.085714) (C001).csv
-The C-number is only a unique curve identifier within a source. Use the table to see its conditions. It does not encode physics and is not an experimental run number. Preserve these assigned IDs when adding future curves. No optional conditions need to be typed into filenames.
+| File | Purpose |
+|---|---|
+| `metadata.xlsx` | One row per retained experimental curve (111). The only metadata store; there is no metadata CSV. Green = done, yellow = needs a check (the "To check" sheet says what to do), no fill = pending. One blank row separates sources. After editing the Metadata sheet, run `python tools/vawt_management.py refresh "(Default) Research Papers"` to recompute status and colours. |
+| `sources.csv` | One row per paper: citation, rotor, what was extracted, audit notes, DOI link. |
+| `ASSUMPTIONS_AND_CHANGES.md` | This log. |
 
-Filenames are verified shorter than 259 characters. A long parent folder can still make the full Windows path too long; keep the project folder short, such as C:\Research. This package contains no automatic renaming script and does not alter your originals.
+The old `rename_map.csv` and its `.xlsx` were retired on 2026-11-02. They only mapped the original upload names to the short names, which are now final; `metadata.xlsx` carries the filename for every curve.
 
-## Decisions and assumptions
+## 2. Conventions
 
-1. El-Samanoudy Fig11: user approved alpha_p=0 degrees, following caption and paper pattern. Plot annotation still says10 degrees; assumption retained explicitly. N2 and N3 remain in analysis; N4 is a reference-only repeat.
-2. Repeated El-Samanoudy baselines: retain Figs6 and7 as primary sources. Nine other CSV copies have been removed from the working tables at the user’s request: Fig10 N4; Fig11 N4 under the zero-pitch assumption; Fig14 c/R0.375; Fig16 NACA0024 and4420; Fig17 NACA0024 and4420; Fig20 c/R0.375; Fig21 c/R0.375. Keep the other distinct curves. This leaves25 El-Samanoudy curves for analysis. The user intends to delete these redundant CSV copies locally; the original uploaded ZIP remains unchanged.
-3. El-Samanoudy Fig20 c/R0.30: user approved removal of original row1, TSR=-0.03339906716055985 and Cp=-0.0009961583318073286. 18 rows become17; all other rows unchanged. Use the corrected CSV supplied separately in ElSamanoudy_Fig20_cToR030_Corrected.zip. Suspected digitization/calibration error, not a proven physical diagnosis. Do not use the uncorrected version from the original upload.
-4. Migliore conversion approved: Re_D=2 Re_rot/[TSR_peak (c/R)]. For c/R0.114, Re_rot131000, TSR_peak4.595228782148789, Cp_peak0.3763607082828982 gives Re_D500137.3649 (label500137). For c/R0.260, Re_rot225000, TSR_peak2.7211301257167575, Cp_peak0.14002665531085196 gives Re_D636047.9473 (label636048). These are estimates at peak Cp using digitized peaks. Using a single Re_D over a complete curve requires constant freestream velocity and fluid properties; that condition is not established here. Do not interpret the reference Re_rot as constant at every TSR. No viscosity assumption is needed for the conversion. Original Re_rot is preserved in metadata.
-5. Nominal air estimates for Eboibi, Li, Howell and El-Samanoudy: assumed dynamic viscosity mu=1.80e-5 Pa s and density rho=1.20 kg/m3; nu=mu/rho=1.50e-5 m2/s. Re_D=rho U(2R)/mu. These are assumptions, not measured conditions. Both assumed properties are explicit table columns. Estimated integer labels do not imply integer-level physical precision.
-6. Miller: use reported Re_D for compressed-air conditions, not ambient-air density. Different pressures are distinct runs even where curves collapse. Custom profile resembles NACA0021 but is not labeled exactly NACA0021.
-7. Somoano: air, reported approximate Re_D300000/400000/500000. Pitch magnitude and toe-in/toe-out direction kept separate; no unapproved cross-paper sign convention. Physical struts and removal of strut-drag losses are separate properties.
-8. Solidity is not added as an ambiguous constant: Nc/R=N(c/R); Nc/D=N(c/R)/2; Nc/(2piR)=N(c/R)/(2pi). Your code uses the last convention. Papers may use another.
-9. Migliore publication year1980, not2012 in the old PDF filename. El-Samanoudy CSV Cp values already are fractions, so do NOT divide by100 again.
+- **Filename:** `SourceYear (Fig 4) (N = 3) (cToR = 0.085714) (C001).csv`. Panel suffixes are kept (`Fig 11a`). Numerical tables use `Tab` instead of `Fig`.
+- **Curve_ID:** `SourceYear-C001`. C-numbers are unique within a source, restart at C001 for each source, and carry no physics. Keep assigned IDs when adding curves.
+- **Match metadata to a data file** by filename or Curve_ID. Copy the constants you need into the data CSV and fill them down every row. TSR and Cp are the varying columns.
+- **Blank means unknown or not assigned, never zero.**
+- **Action** (documentation only): `Use` = CSV exists and metadata checked against the paper; `Use - check` = CSV exists but a known issue needs review; `Extract`, `Capture figure`, `Review repeat` = not extracted yet.
+- **Re_basis:** `reported`, `reported approximate`, `estimated`, `estimated from peak TSR and reported Re_rot`. Definitions are on the Legend sheet of the workbook.
+- **Assumed air:** mu = 1.80E-05 Pa s, rho = 1.20 kg/m3, so nu = 1.50E-05 m2/s. The two columns are filled only on rows where the assumption was used.
+- **Solidity** is not stored. Nc/R = N(c/R); Nc/D = N(c/R)/2; Nc/(2piR) = N(c/R)/(2pi). The notebook uses the last convention; papers may use another.
 
-## What still needs review
+## 3. Decisions and assumptions
 
-- Howell Figs7-8:16 distinct rough/smooth and speed cases. Fig12 experimental circles:one additional extraction. Figs10-11 experimental circles may repeat Fig8; compare before counting. Exclude all CFD series. Fig7/8 U5.45 differs from Fig12 U5.81.
-- Li: capture Fig12 (PDF p.8), four optimum-pitch curves, and Fig21 (PDF p.11), black experimental series only. Compare with Fig11 before adding as independent runs. Fig21 pitch remains unverified. Check Fig11d peak markers and the small negative endpoint of11b pitch6.
-- Miller:22 pressure-specific cases in Figs3b and4a-f. Fig5 field scatter needs separate provenance and per-point Re handling; tunnel repeats must not be counted twice. Fig9 is a derived mean, not another primary run.
-- Somoano:27 cases in Figs4-6. Near-zero cases may overlap; do not invent separate points where symbols cannot be distinguished. Fig3 left repeats8-degree toe-out cases; right is not Cp-TSR. Fig2d is a method example, not an identified additional run.
-- Existing unsorted points: El-Samanoudy Fig10 N4 (reference only), Fig6 pitch20, and Migliore c/R0.114. Order should be checked before sorting a plotting copy. No sorting performed here. Migliore's last c/R0.114 point may follow a curve extension rather than a measured symbol.
-- Several small El-Samanoudy curves have only2-5 points and overlap near the origin; curve identity/peak accuracy needs visual checking. No automatic correction made.
+1. **El-Samanoudy Fig 11:** pitch alpha_p = 0 deg, following the caption and the paper's pattern, although the plot annotation says 10 deg. Approved by the user. N=2 and N=3 stay in the analysis.
+2. **El-Samanoudy repeated baselines:** Figs 6 and 7 are the primary sources. Nine repeat curves were removed at the user's request: Fig 10 N4; Fig 11 N4; Fig 14 c/R 0.375; Figs 16 and 17 NACA0024 and NACA4420; Figs 20 and 21 c/R 0.375. 25 El-Samanoudy curves remain. PDFs and screenshots are kept because those figures also hold distinct curves.
+3. **El-Samanoudy Fig 20, c/R 0.30:** original row 1 (TSR = -0.03339906716055985, Cp = -0.0009961583318073286) removed as a suspected digitization or calibration error; 18 rows became 17. Not a proven physical diagnosis.
+4. **Migliore:** Re_D = 2 Re_rot / [TSR_peak (c/R)]. For c/R 0.114: Re_rot 131000, TSR_peak 4.595228782148789, Cp_peak 0.3763607082828982 gives Re_D 500137.3649 (labelled 500137). For c/R 0.260: Re_rot 225000, TSR_peak 2.7211301257167575, Cp_peak 0.14002665531085196 gives 636047.9473 (labelled 636048). These are estimates at the digitized peak; one Re_D over a whole curve would need constant freestream speed and fluid properties, which is not established. No viscosity is needed. Re_rot is preserved in the metadata.
+5. **Nominal air estimates** for Eboibi, Li, Howell and El-Samanoudy: Re_D = rho U (2R) / mu with the assumed air above. These are assumptions, not measured conditions. Integer-looking labels do not imply integer precision. Eboibi's own Re (16,800-84,000) is chord-scale and is not used.
+6. **Miller:** use the reported Re_D for compressed air, not an ambient-air value. Different pressures are distinct runs even where curves collapse. The custom WPE profile resembles NACA0021 but is not labelled exactly NACA0021.
+7. **Somoano:** air, reported approximate Re_D 300000/400000/500000. Pitch magnitude and toe-in/toe-out direction are stored separately; no cross-paper sign convention is imposed. Physical struts and the strut-drag correction are separate properties.
+8. **Migliore publication year** is 1980, not 2012 as in the old PDF filename.
+9. **El-Samanoudy Cp values are already fractions.** Do not divide by 100 again.
+10. **Duplicates not collected (2026-11-02):** Howell Figs 10 and 11 (experimental markers at 4.31 and 5.07 m/s) repeat the 3-blade curves in Fig 8; Li Fig 12 replots the optimum-pitch curves of Fig 11 (N=2 beta 6, N=3 beta 8, N=4 beta 8, N=5 beta 12 = C002, C005, C008, C011); Li Fig 21 replots the two-bladed wind-tunnel measurements for a CFD comparison. These seven rows were deleted from the metadata and the IDs renumbered (Howell Fig 12 became C017). Howell Fig 12 (5.81 m/s) is not a repeat, because no collected curve has that speed, so it stays pending.
+11. **Importer:** the current importer requires U_m_s. Where it is unknown, leave it blank and resolve the importer handling rather than inventing a value. Group curves by all differing conditions, not only N and cToR.
 
-## Missing figure check
+## 4. Source status
+
+| Source | Curves | CSVs | Status |
+|---|---|---|---|
+| Eboibi2016 | 6 | 6 | Done |
+| ElSamanoudy2010 | 25 | 25 | Done |
+| Howell2010 | 17 | 16 | Figs 7-8 done; Fig 12 (5.81 m/s) pending; Figs 10-11 repeat Fig 8 |
+| Li2015 | 12 | 12 | Done; Figs 12 and 21 repeat Fig 11 |
+| Migliore1980 | 2 | 2 | Done |
+| Miller2018 | 22 | 22 | Done; Fig 3b flagged |
+| SomoanoHueraHuarte2018 | 27 | 27 | Done |
+| **Total** | **111** | **110** | 106 done, 4 to check, 1 pending |
+
+### Missing-figure check
 
 | Source | Result |
 |---|---|
-| Eboibi2016 | Core complete. Missing Fig6 screenshot is a repeated comparison, not a new primary case. |
-| ElSamanoudy2010 | Core figures saved. Fig24 missing comparison: own baseline repeats; Hwang curves require the original source for verification. Fig7 has seven cases, no60-degree case. |
-| Howell2010 | All direct Cp-TSR figures saved; experimental curves only. |
-| Li2015 | Figs12 and21 missing as screenshots; capture and reconcile as above. |
-| Migliore1980 | Experimental Fig11 complete. |
-| Miller2018 | Direct plots saved; distinguish pressure runs, field scatter and derived mean. |
-| SomoanoHueraHuarte2018 | Core Figs4-6 complete; other saved plots are methods/comparisons. |
+| Eboibi2016 | Core complete. Fig 6 repeats a comparison and is not a new case. |
+| ElSamanoudy2010 | Core figures saved. Fig 24 compares the paper's own baseline; Hwang curves need the original source. Fig 7 has seven cases (no 60 deg). |
+| Howell2010 | Direct Cp-TSR figures saved; experimental markers only, all CFD excluded. |
+| Li2015 | Fig 11 complete. Figs 12 and 21 repeat Fig 11 data and were not collected. |
+| Migliore1980 | Experimental Fig 11 complete. |
+| Miller2018 | Direct plots saved. Fig 5 field scatter and Fig 9 derived mean are not primary runs. |
+| SomoanoHueraHuarte2018 | Core Figs 4-6 complete; the other saved plots are methods or comparisons. |
 
-## Standing workflow
+## 5. Open items
 
-For each new paper: verify actual experimental Cp-TSR curves and repeated baselines BEFORE requesting digitization; audit geometry, conditions and CSV values; identify missing figures; ask about unresolved decisions one at a time in chat. Record user decisions, assumptions, units, equations, source conflicts and edits here. Return only a rename map, a curve metadata table, and this readable log; no redundant audit CSVs. Original research files remain intact.
+- **Howell:** extract the Fig 12 experimental circles (C017, 5.81 m/s, five points); this is the only new run left. If you decide it is not worth collecting, delete the row.
+- **Li:** check the Fig 11d peak markers and the small negative endpoint of Fig 11b pitch 6.
+- **Yellow rows** (Miller2018 C001-C004, Fig 3b) are listed with instructions on the "To check" sheet of `metadata.xlsx`.
+- **Miller:** Fig 3b pressure values (125/156/183/203 bar) could not be machine-verified; the caption confirms four pressures. Fig 5 field data would need separate provenance and per-point Re.
+- **Somoano:** near-zero cases may overlap; do not invent separate points where symbols cannot be told apart.
+- **Point order:** 20 data files are not in TSR order (El-Samanoudy Fig 6 pitch 20, Howell Figs 7-8, Migliore c/R 0.114, Miller Figs 3b and 4b, Somoano Figs 4-6). Sort a plotting copy, not the original. Migliore's last c/R 0.114 point may follow a curve extension rather than a symbol.
+- **Small curves:** several El-Samanoudy curves have only 2-5 points and overlap near the origin; check curve identity and peak accuracy by eye.
+## 6. Verification log
 
-Renaming is not metadata ingestion. Your current importer requires U_m_s; if unknown, leave it unknown and resolve importer handling rather than inventing a value. After manually adding metadata, group curves by all relevant differing conditions, not only N and cToR. No notebook changes are included.
+**2026-11-02 PDF audit.** All 118 metadata rows were compared with the seven PDFs and their figure screenshots (blade count, radius, chord, c/R, airfoil, wind speeds, pitch and pressure legends, Re values). All matched, with these limits: Miller Fig 3b pressure values are unverified (see section 5), and Howell's strut loss is left blank although its spin-down tests removed the blades and kept the spokes. Li2015 digitized peaks (0.195 for N=3, beta 8) agree with the reported 0.189.
 
-## User-requested alphabetical/numerical ordering — 2026-09-28
+## 7. Change history
 
-Both CSV tables are now sorted alphabetically by source and numerically by figure (including panel suffixes: 11a,11b,11c,11d). Within a figure, curve order uses N, c/R, velocity, pitch magnitude/direction, pressure, surface and foil. PDF references come first within each source, and screenshots precede curve entries for the same figure.
-
-C identifiers were deliberately reassigned once, at the user’s request, to follow this ordering. They restart at C001 for each source, including existing and planned curves. The full Curve_ID (SourceYear-Cxxx) is the matching key in both tables; non-curve assets have a blank Curve_ID. previous_filename in rename_map records the former proposed name so already-renamed files can be matched. current_file still records the original uploaded path. No measurements, assumptions, or decisions changed during sorting. Use these new IDs in place of the earlier set. Real source CSV/PNG/PDF files were not renamed on the user’s PC.
-
-## Reference-only removal and ID reassignment — 2026-09-28
-
-User requested removal of the nine repeated El-Samanoudy CSV entries from both tables and consecutive ID reassignment. Tables now contain118 curve rows in metadata and160 asset/planned-file rows in rename_map. Remaining curves stay in source/figure order. IDs restart at C001 per source without gaps. previous_filename now records the immediately preceding proposed filename; current_file retains the original uploaded relative path. Use the NEW IDs from this version. No measurement values changed.
-
-Removed entries, identified using their OLD IDs and filenames (these old IDs may now be reused for different retained curves; match full filenames, not the number alone):
-
-- ElSamanoudy2010 (Fig 10) (N = 4) (cToR = 0.375) (C017).csv
-- ElSamanoudy2010 (Fig 11) (N = 4) (cToR = 0.375) (C020).csv
-- ElSamanoudy2010 (Fig 14) (N = 4) (cToR = 0.375) (C021).csv
-- ElSamanoudy2010 (Fig 16) (N = 4) (cToR = 0.375) (C023).csv
-- ElSamanoudy2010 (Fig 16) (N = 4) (cToR = 0.375) (C024).csv
-- ElSamanoudy2010 (Fig 17) (N = 4) (cToR = 0.375) (C026).csv
-- ElSamanoudy2010 (Fig 17) (N = 4) (cToR = 0.375) (C027).csv
-- ElSamanoudy2010 (Fig 20) (N = 4) (cToR = 0.375) (C031).csv
-- ElSamanoudy2010 (Fig 21) (N = 4) (cToR = 0.375) (C034).csv
-
-Only duplicate curve CSV entries were removed. Keep the source PDFs and figure screenshots: those figures also contain distinct curves still used in analysis. Files on the user’s PC have not been deleted or renamed by this operation.
+- **2026-11-02 (data files):** Added the missing `cToR` column (0.265) to the 12 Li2015 Fig 11 files and the missing `Re_D` column (426667) to ElSamanoudy2010-C001, so all 110 data files now carry `cToR` and `Re_D`; no TSR or Cp value changed. Renamed the 18 Howell, Miller, Somoano and Migliore screenshots to `SourceYear (Fig X).png` like the others. Deleted the stale `(Default) Research Papers.zip` snapshot.
+- **2026-11-02 (later):** `metadata.csv` deleted; `metadata.xlsx` is the only metadata store and `tools/vawt_management.py refresh` replaces `build`. One blank row now separates sources. Seven duplicate rows (Howell C017-C018, Li C013-C017) removed and Howell Fig 12 renumbered C019 -> C017 (decision 10); the curve count is 111. Rows needing a check are yellow, and each carries a "Check: ... To do: ..." note collected on the "To check" sheet.
+- **2026-11-02:** Management folder standardized with the troposkein folder. Blank row after the header removed; BOM removed. Action vocabulary replaced (`Digitize` -> `Use` for the 61 extracted curves, `Extract` for the one pending); four Miller Fig 3b rows set to `Use - check`. Added `sources.csv`, `metadata.xlsx` and the shared tooling in `tools/`.
+- **2026-09-28 (second change):** Removed nine repeated El-Samanoudy entries and reassigned IDs consecutively per source (see decision 2). Old IDs may now belong to different curves; match full filenames, not the number alone. 118 curve rows remain.
+- **2026-09-28 (first change):** Tables sorted alphabetically by source and numerically by figure (panels 11a-11d included); within a figure by N, c/R, velocity, pitch, pressure, surface and foil. IDs were reassigned once at the user's request to follow that order.
