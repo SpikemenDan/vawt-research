@@ -37,18 +37,19 @@ The old `rename_map_troposkein.csv` was retired on 2026-11-02; filenames are fin
 10. **Battisti2016 geometry** (c = 0.101 m, R_eq = 1.014 m, c/R = 0.099606, DU-06-W200) comes from the companion Energy paper. Battisti2018 dimensions must not be borrowed.
 11. **Importer and notebook:** this folder is independent of the default folder's tables. Notebook ingestion was not edited or tested.
 12. **Sheldahl1977 re-digitized and Blackwell Fig 19 confirmed (2026-11-02):** the user re-digitized all four Sheldahl1977 Fig 9 series and confirmed the Blackwell Fig 19 speeds (7 and 9 m/s). Checked against the Fig 9 legend by endpoint and peak: 125 rpm squares end at TSR 6.69 (Cp -0.061); 150b triangles end at 6.73, peak 0.237; 150a circles end at 7.32, peak 0.272; 162.5 rpm diamonds end at 7.27, peak 0.238. The new C002 file held the circles and C003 the triangles, so the two files were exchanged to match the metadata (C002 = 150b, Re_rot 380000; C003 = 150a, 400000), as for Sheldahl1980. The files were reformatted with a header, N, cToR, Re_rot and pointwise Re_D. The nominal c/R 0.076 stays accepted, as in the original `Use with nominal equatorial geometry` action. All of these rows are now `Use` (green).
+13. **Battisti2016 extracted (2026-11-02):** Tables 1-4 were read from the user's screenshots and every TSR_eq, CQ,aero, CTX and CTY value (58 rows, signs included) was cross-checked against the PDF text layer, where the minus sign is a private glyph. The tables give CQ,aero, not Cp, so Cp = TSR_eq x CQ,aero is calculated and Re_D = 2 Re_rot / (cToR TSR) per row, with cToR 0.099606 and Re_rot 138000 / 205000. Peak Cp: Tab 1 0.275 at TSR 3.53; Tab 2 0.345 at 3.38; Tab 3 0.234 at 3.29; Tab 4 0.315 at 3.54. High-TSR points have negative Cp (for example Tab 2, TSR 8.17, Cp -1.19), which is kept as printed. One workbook and one CSV per table are in `Battisti2016/data/`.
 
 ## 4. Source status
 
 | Source | Rotor | Curves | CSVs | Status |
 |---|---|---|---|---|
-| Battisti2016 | DeepWind demonstrator | 4 | 0 | Tab 1-4 to extract |
+| Battisti2016 | DeepWind demonstrator | 4 | 4 | Done (Cp calculated from CQ,aero) |
 | Battisti2018 | Troposkien vs H-rotor | 1 | 1 | Done |
 | Blackwell1976 | Sandia 2-m | 26 | 26 | Done |
 | Muraca1976 | NASA 14-ft | 1 | 1 | Done |
 | Sheldahl1977 | Sandia 5-m, original blades | 4 | 4 | Done (nominal c/R 0.076) |
 | Sheldahl1980 | Sandia 5-m, extruded NACA0015 | 5 | 5 | Done |
-| **Total** | | **41** | **37** | 37 done, 0 to check, 4 pending |
+| **Total** | | **41** | **41** | 41 done, 0 to check, 0 pending |
 
 Other sources in `sources.csv` (Ashwill1992, Read1986, SouthRangi, VeersCompilation, WorstellAddendum, Battisti2016Energy) have no curves yet. The Sandia 17-m and 34-m reports were not among the audited papers, so their figure completeness is not certified.
 
@@ -105,7 +106,8 @@ Boundaries: the rotational conversion is valid only when Re_rot = omega R c / nu
 
 ## 6. Open items
 
-- **Extract Battisti2016 Tab 1-4** (C001-C004) as CSVs. Geometry is from the companion Energy paper, which is not in this folder.
+- **Battisti2016 geometry** (c, R_eq, hence c/R 0.099606) comes from the companion Energy paper, which is not in this folder.
+- **Battisti2016 folder** sits outside `!archive` (moved there by the user); move it in if you want the same layout as the other sources.
 - **Source inconsistencies kept, not resolved:** Blackwell Table I versus Fig 10; Muraca imperial-to-metric chord typo; Sheldahl1980 nominal diameter versus reported c/R.
 - **Point order:** Blackwell C003, C014, C015, C026 and Muraca are not in TSR order. Muraca follows the paper's table order. Sort a plotting copy only.
 - **Leads:** audit Ashwill1992 (Sandia 34-m), WorstellAddendum (Sandia 17-m) and the other leads in `sources.csv` before adding curves.
@@ -120,6 +122,7 @@ Boundaries: the rotational conversion is valid only when Re_rot = omega R c / nu
 
 ## 8. Change history
 
+- **2026-11-02 (Battisti2016):** Tab 1-4 extracted into four workbooks and four CSVs (decision 13); the four rows changed from `Extract` to `Use`. Troposkein now has 41 curves, all done, none to check or pending.
 - **2026-11-02 (Sheldahl1977 / Blackwell):** Blackwell C025-C026 confirmed; Sheldahl1977 re-digitized by the user, files C002/C003 exchanged and all four reformatted (decision 12). Troposkein now has 37 done, 0 to check, 4 pending (the Battisti2016 tables).
 - **2026-11-02 (later):** `metadata.csv` deleted; `metadata.xlsx` is now the only metadata store and `tools/vawt_management.py refresh` replaces `build`. One blank row now separates sources inside the Metadata sheet. Highlight colour for rows needing a check is yellow. Each yellow row's Notes now carry a "Check: ... To do: ..." sentence, collected on the new "To check" sheet. No curves were removed here: the four pending Battisti2016 rows are the only primary Tab 1-4 data, so they are not duplicates.
 
