@@ -32,7 +32,7 @@ Keep optional extras (for example a literature review PDF) in `!management/`. Ed
 python tools/vawt_management.py refresh "(<Type>) Research Papers"
 ```
 
-Close the workbook in Excel first. `refresh` checks `Action` against the data files on disk and prints a warning for any disagreement, a duplicate or non-consecutive Curve_ID, or a yellow row with no `Check:` note. It regenerates the `Status` column, the colours, one blank row between sources, and the Summary, To check, Sources and Legend sheets, so do not edit those by hand.
+Close the workbook in Excel first. The workbook may carry a type suffix (for example `metadata_troposkein.xlsx`); the tool uses the single `metadata*.xlsx` in `!management/`. `refresh` checks `Action` against the data files on disk and prints a warning for any disagreement, a duplicate or non-consecutive Curve_ID, or a yellow row with no `Check:` note. It regenerates the `Status` column, the colours, one blank row between sources, and the Summary, To check, Sources and Legend sheets, so do not edit those by hand.
 
 ## Workflow for each new paper
 

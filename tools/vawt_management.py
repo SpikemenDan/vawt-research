@@ -101,6 +101,15 @@ See `MANAGEMENT_TEMPLATE.md` at the repository root.
 """
 
 
+def xlsx_path(mdir):
+    """The workbook in !management: the single metadata*.xlsx (so metadata_troposkein.xlsx works too)."""
+    found = [f for f in sorted(glob.glob(os.path.join(mdir, "metadata*.xlsx")))
+             if not os.path.basename(f).startswith("~$")]
+    if len(found) > 1:
+        sys.exit("more than one metadata*.xlsx in %s: %s" % (mdir, [os.path.basename(f) for f in found]))
+    return found[0] if found else os.path.join(mdir, "metadata.xlsx")
+
+
 def _cell(v):
     if v is None:
         return ""
@@ -113,7 +122,7 @@ def _cell(v):
 
 def load_metadata(mdir):
     """Return rows as dicts. Reads metadata.xlsx; falls back to metadata.csv for a first migration."""
-    xp, cp = os.path.join(mdir, "metadata.xlsx"), os.path.join(mdir, "metadata.csv")
+    xp, cp = xlsx_path(mdir), os.path.join(mdir, "metadata.csv")
     if os.path.exists(xp):
         from openpyxl import load_workbook
         ws = load_workbook(xp, data_only=True)["Metadata"]
@@ -392,7 +401,7 @@ def write_workbook(folder, recs, srcs):
     wl.column_dimensions["C"].width = 110
     wl.sheet_view.showGridLines = False
 
-    out = os.path.join(mdir, "metadata.xlsx")
+    out = xlsx_path(mdir)
     try:
         wb.save(out)
     except PermissionError:

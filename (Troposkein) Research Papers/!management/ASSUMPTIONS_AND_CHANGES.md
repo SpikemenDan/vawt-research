@@ -6,12 +6,12 @@ Curved-blade (Darrieus) rotors. Last updated 2026-11-02.
 
 | File | Purpose |
 |---|---|
-| `metadata.xlsx` | One row per retained experimental curve (41). The only metadata store; there is no metadata CSV. Green = done, yellow = needs a check (the "To check" sheet says what to do), no fill = pending. One blank row separates sources. After editing the Metadata sheet, run `python tools/vawt_management.py refresh "(Troposkein) Research Papers"` to recompute status and colours. |
+| `metadata_troposkein.xlsx` | One row per retained experimental curve (41). The only metadata store; there is no metadata CSV. Green = done, yellow = needs a check (the "To check" sheet says what to do), no fill = pending. One blank row separates sources. After editing the Metadata sheet, run `python tools/vawt_management.py refresh "(Troposkein) Research Papers"` to recompute status and colours. |
 | `sources.csv` | One row per paper or lead, including candidates not yet extracted. |
 | `Troposkein_Dataset_Review.pdf` | Literature review PDF supplied with the dataset (kept as reference). |
 | `ASSUMPTIONS_AND_CHANGES.md` | This log. |
 
-The old `rename_map_troposkein.csv` was retired on 2026-11-02; filenames are final and `metadata.xlsx` lists them. The earlier Excel workbook with a "Re_D Calculations" tab is not in the repository; its content is section 5 below and the Re_D instruction in each row's Notes.
+The old `rename_map_troposkein.csv` was retired on 2026-11-02; filenames are final and `metadata_troposkein.xlsx` lists them. The earlier Excel workbook with a "Re_D Calculations" tab is not in the repository; its content is section 5 below and the Re_D instruction in each row's Notes.
 
 ## 2. Conventions
 
@@ -51,7 +51,9 @@ The old `rename_map_troposkein.csv` was retired on 2026-11-02; filenames are fin
 | Sheldahl1980 | Sandia 5-m, extruded NACA0015 | 5 | 5 | Done |
 | **Total** | | **41** | **41** | 41 done, 0 to check, 0 pending |
 
-Other sources in `sources.csv` (Ashwill1992, Read1986, SouthRangi, VeersCompilation, WorstellAddendum, Battisti2016Energy) have no curves yet. The Sandia 17-m and 34-m reports were not among the audited papers, so their figure completeness is not certified.
+Other sources in `sources.csv` (Ashwill1992, Read1986, SouthRangi, WorstellAddendum) have no curves yet. The Sandia 17-m and 34-m reports were not among the audited papers, so their figure completeness is not certified.
+
+Supporting references are not tracked in `sources.csv`; they are named here and in the notes instead: **Battisti2016Energy** (Energy 111 (2016) 484-497, DOI 10.1016/j.energy.2016.05.080; the companion paper of the same DeepWind campaign, which supplies the Battisti2016 geometry and is never counted as a separate experiment) and **VeersCompilation** (Sandia selected-papers compilation, SAND90-1615; a bibliographic lead only).
 
 ### Battisti2016
 
@@ -122,6 +124,7 @@ Boundaries: the rotational conversion is valid only when Re_rot = omega R c / nu
 
 ## 8. Change history
 
+- **2026-11-02 (supporting sources):** The two `Supporting` rows (Battisti2016Energy, VeersCompilation) were removed from `sources.csv` and are named in section 4 and in the Battisti2016 notes instead. The workbook in this folder is named `metadata_troposkein.xlsx`; the tool accepts any single `metadata*.xlsx`.
 - **2026-11-02 (Battisti2016):** Tab 1-4 extracted into four workbooks and four CSVs (decision 13); the four rows changed from `Extract` to `Use`. Troposkein now has 41 curves, all done, none to check or pending.
 - **2026-11-02 (Sheldahl1977 / Blackwell):** Blackwell C025-C026 confirmed; Sheldahl1977 re-digitized by the user, files C002/C003 exchanged and all four reformatted (decision 12). Troposkein now has 37 done, 0 to check, 4 pending (the Battisti2016 tables).
 - **2026-11-02 (later):** `metadata.csv` deleted; `metadata.xlsx` is now the only metadata store and `tools/vawt_management.py refresh` replaces `build`. One blank row now separates sources inside the Metadata sheet. Highlight colour for rows needing a check is yellow. Each yellow row's Notes now carry a "Check: ... To do: ..." sentence, collected on the new "To check" sheet. No curves were removed here: the four pending Battisti2016 rows are the only primary Tab 1-4 data, so they are not duplicates.
