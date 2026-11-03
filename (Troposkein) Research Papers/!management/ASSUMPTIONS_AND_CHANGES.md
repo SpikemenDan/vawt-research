@@ -36,6 +36,7 @@ The old `rename_map_troposkein.csv` was retired on 2026-11-02; filenames are fin
 9. **Sheldahl1977 (2026-11-02):** c/R is the nominal equatorial ratio 0.19 m / 2.5 m = 0.076, not a verified uniform chord. Data files were renamed from `cToR = unknown` to `cToR = 0.076` and reformatted with a header, N, cToR, Re_rot and pointwise Re_D = 2 Re_rot / (cToR TSR), the same layout as Blackwell. The earlier rpm-based estimate (nominal D = 5 m, nu = 1.50E-05) was dropped so every source uses one method; it differed by about 20% because Re_rot reflects the 1658 m test site's thinner air.
 10. **Battisti2016 geometry** (c = 0.101 m, R_eq = 1.014 m, c/R = 0.099606, DU-06-W200) comes from the companion Energy paper. Battisti2018 dimensions must not be borrowed.
 11. **Importer and notebook:** this folder is independent of the default folder's tables. Notebook ingestion was not edited or tested.
+12. **Sheldahl1977 re-digitized and Blackwell Fig 19 confirmed (2026-11-02):** the user re-digitized all four Sheldahl1977 Fig 9 series and confirmed the Blackwell Fig 19 speeds (7 and 9 m/s). Checked against the Fig 9 legend by endpoint and peak: 125 rpm squares end at TSR 6.69 (Cp -0.061); 150b triangles end at 6.73, peak 0.237; 150a circles end at 7.32, peak 0.272; 162.5 rpm diamonds end at 7.27, peak 0.238. The new C002 file held the circles and C003 the triangles, so the two files were exchanged to match the metadata (C002 = 150b, Re_rot 380000; C003 = 150a, 400000), as for Sheldahl1980. The files were reformatted with a header, N, cToR, Re_rot and pointwise Re_D. The nominal c/R 0.076 stays accepted, as in the original `Use with nominal equatorial geometry` action. All of these rows are now `Use` (green).
 
 ## 4. Source status
 
@@ -43,11 +44,11 @@ The old `rename_map_troposkein.csv` was retired on 2026-11-02; filenames are fin
 |---|---|---|---|---|
 | Battisti2016 | DeepWind demonstrator | 4 | 0 | Tab 1-4 to extract |
 | Battisti2018 | Troposkien vs H-rotor | 1 | 1 | Done |
-| Blackwell1976 | Sandia 2-m | 26 | 26 | Done; Fig 19 flagged |
+| Blackwell1976 | Sandia 2-m | 26 | 26 | Done |
 | Muraca1976 | NASA 14-ft | 1 | 1 | Done |
-| Sheldahl1977 | Sandia 5-m, original blades | 4 | 4 | Check (C001 digitization, nominal geometry) |
+| Sheldahl1977 | Sandia 5-m, original blades | 4 | 4 | Done (nominal c/R 0.076) |
 | Sheldahl1980 | Sandia 5-m, extruded NACA0015 | 5 | 5 | Done |
-| **Total** | | **41** | **37** | 31 done, 6 to check, 4 pending |
+| **Total** | | **41** | **37** | 37 done, 0 to check, 4 pending |
 
 Other sources in `sources.csv` (Ashwill1992, Read1986, SouthRangi, VeersCompilation, WorstellAddendum, Battisti2016Energy) have no curves yet. The Sandia 17-m and 34-m reports were not among the audited papers, so their figure completeness is not certified.
 
@@ -105,10 +106,8 @@ Boundaries: the rotational conversion is valid only when Re_rot = omega R c / nu
 ## 6. Open items
 
 - **Extract Battisti2016 Tab 1-4** (C001-C004) as CSVs. Geometry is from the companion Energy paper, which is not in this folder.
-- **Sheldahl1977 C001:** the digitized series reaches TSR 7.50 although the 125 rpm squares end near 6.7, and its peak (0.214) exceeds the figure (about 0.19). Overlay it on Fig 9 and re-digitize if needed. Check C002-C004 against the figure at the same time.
-- **Blackwell Fig 19 (C025-C026):** the speed legend is not machine-readable; 7 and 9 m/s follow Table I and Figs 17-18.
 - **Source inconsistencies kept, not resolved:** Blackwell Table I versus Fig 10; Muraca imperial-to-metric chord typo; Sheldahl1980 nominal diameter versus reported c/R.
-- **Point order:** Blackwell C003, C014, C015, C026, Sheldahl1977 C001 and Muraca are not in TSR order. Muraca follows the paper's table order. Sort a plotting copy only.
+- **Point order:** Blackwell C003, C014, C015, C026 and Muraca are not in TSR order. Muraca follows the paper's table order. Sort a plotting copy only.
 - **Leads:** audit Ashwill1992 (Sandia 34-m), WorstellAddendum (Sandia 17-m) and the other leads in `sources.csv` before adding curves.
 
 ## 7. Verification log
@@ -116,10 +115,12 @@ Boundaries: the rotational conversion is valid only when Re_rot = omega R c / nu
 **2026-11-02 PDF audit.** All 41 metadata rows were compared with the PDFs and figure images.
 - **Confirmed:** Battisti2016 rpm, Re_rot, N and Tab 1-4 conditions; Battisti2018 geometry, solidity 0.38, Re_c and spokes; Blackwell Table I chords, radius and all 16 Re legends; Muraca N, D, chord and every Table I value in the CSV; Sheldahl1980 legends, geometry and Fig 7 peaks; Sheldahl1977 Fig 9 legend and Re values.
 - **Fixed:** Sheldahl1980 C004/C005 (decision 8); Sheldahl1977 filenames, layout and Re_D method (decision 9); stale sources.csv text.
-- **Not verifiable here:** Battisti2016 geometry (companion paper absent; c and R_eq imply nu of about 1.55e-5 m2/s, plausible); Sheldahl1977 geometry (scan without a text layer; corroborated by Sheldahl1980's description of the original blades); Blackwell Fig 19 speeds.
+- **Confirmed by the user:** Blackwell Fig 19 speeds (C025-C026); Sheldahl1977 re-digitization (see decision 12).
+- **Not verifiable here:** Battisti2016 geometry (companion paper absent; c and R_eq imply nu of about 1.55e-5 m2/s, plausible); Sheldahl1977 geometry (scan without a text layer; corroborated by Sheldahl1980's description of the original blades).
 
 ## 8. Change history
 
+- **2026-11-02 (Sheldahl1977 / Blackwell):** Blackwell C025-C026 confirmed; Sheldahl1977 re-digitized by the user, files C002/C003 exchanged and all four reformatted (decision 12). Troposkein now has 37 done, 0 to check, 4 pending (the Battisti2016 tables).
 - **2026-11-02 (later):** `metadata.csv` deleted; `metadata.xlsx` is now the only metadata store and `tools/vawt_management.py refresh` replaces `build`. One blank row now separates sources inside the Metadata sheet. Highlight colour for rows needing a check is yellow. Each yellow row's Notes now carry a "Check: ... To do: ..." sentence, collected on the new "To check" sheet. No curves were removed here: the four pending Battisti2016 rows are the only primary Tab 1-4 data, so they are not duplicates.
 
 - **2026-11-02:** Management folder standardized with the default folder. Files renamed to `metadata.csv`, `sources.csv`, `ASSUMPTIONS_AND_CHANGES.md`; `rename_map` retired; `metadata.xlsx` and `tools/vawt_management.py` added. Action values replaced (`Use with nominal equatorial geometry` -> `Use - check`; the four Battisti2016 rows -> `Extract`); Re_basis changed from formula strings to the shared vocabulary (formulas remain in Notes); `assumed_mu` / `assumed_rho` blanked on 16 Blackwell rows that do not use them; mu written as 1.80E-05; foil names written as `NACA0012`. Sheldahl1980 swap and Sheldahl1977 rename recorded in decisions 8-9. Battisti2016 and Sheldahl1977 moved into `!archive/` so all six sources share one layout (Battisti2016 has no `data/` folder yet).

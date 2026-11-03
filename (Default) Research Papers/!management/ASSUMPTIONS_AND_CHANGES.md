@@ -6,7 +6,7 @@ Straight-bladed (H-type) and other non-troposkien rotors. Last updated 2026-11-0
 
 | File | Purpose |
 |---|---|
-| `metadata.xlsx` | One row per retained experimental curve (111). The only metadata store; there is no metadata CSV. Green = done, yellow = needs a check (the "To check" sheet says what to do), no fill = pending. One blank row separates sources. After editing the Metadata sheet, run `python tools/vawt_management.py refresh "(Default) Research Papers"` to recompute status and colours. |
+| `metadata.xlsx` | One row per retained experimental curve (110). The only metadata store; there is no metadata CSV. Green = done, yellow = needs a check (the "To check" sheet says what to do), no fill = pending. One blank row separates sources. After editing the Metadata sheet, run `python tools/vawt_management.py refresh "(Default) Research Papers"` to recompute status and colours. |
 | `sources.csv` | One row per paper: citation, rotor, what was extracted, audit notes, DOI link. |
 | `ASSUMPTIONS_AND_CHANGES.md` | This log. |
 
@@ -34,7 +34,7 @@ The old `rename_map.csv` and its `.xlsx` were retired on 2026-11-02. They only m
 7. **Somoano:** air, reported approximate Re_D 300000/400000/500000. Pitch magnitude and toe-in/toe-out direction are stored separately; no cross-paper sign convention is imposed. Physical struts and the strut-drag correction are separate properties.
 8. **Migliore publication year** is 1980, not 2012 as in the old PDF filename.
 9. **El-Samanoudy Cp values are already fractions.** Do not divide by 100 again.
-10. **Duplicates not collected (2026-11-02):** Howell Figs 10 and 11 (experimental markers at 4.31 and 5.07 m/s) repeat the 3-blade curves in Fig 8; Li Fig 12 replots the optimum-pitch curves of Fig 11 (N=2 beta 6, N=3 beta 8, N=4 beta 8, N=5 beta 12 = C002, C005, C008, C011); Li Fig 21 replots the two-bladed wind-tunnel measurements for a CFD comparison. These seven rows were deleted from the metadata and the IDs renumbered (Howell Fig 12 became C017). Howell Fig 12 (5.81 m/s) is not a repeat, because no collected curve has that speed, so it stays pending.
+10. **Duplicates and skipped figures (2026-11-02):** Howell Figs 10 and 11 (experimental markers at 4.31 and 5.07 m/s) repeat the 3-blade curves in Fig 8; Li Fig 12 replots the optimum-pitch curves of Fig 11 (N=2 beta 6, N=3 beta 8, N=4 beta 8, N=5 beta 12 = C002, C005, C008, C011); Li Fig 21 replots the two-bladed wind-tunnel measurements for a CFD comparison. Howell Fig 12 (5.81 m/s, five points, blade finish not stated) is not a repeat but was deliberately skipped. These eight rows were deleted from the metadata. To add Fig 12 later, append a Howell2010-C017 row and extract the circles.
 11. **Importer:** the current importer requires U_m_s. Where it is unknown, leave it blank and resolve the importer handling rather than inventing a value. Group curves by all differing conditions, not only N and cToR.
 
 ## 4. Source status
@@ -43,12 +43,12 @@ The old `rename_map.csv` and its `.xlsx` were retired on 2026-11-02. They only m
 |---|---|---|---|
 | Eboibi2016 | 6 | 6 | Done |
 | ElSamanoudy2010 | 25 | 25 | Done |
-| Howell2010 | 17 | 16 | Figs 7-8 done; Fig 12 (5.81 m/s) pending; Figs 10-11 repeat Fig 8 |
+| Howell2010 | 16 | 16 | Done; Figs 10-11 repeat Fig 8; Fig 12 skipped |
 | Li2015 | 12 | 12 | Done; Figs 12 and 21 repeat Fig 11 |
 | Migliore1980 | 2 | 2 | Done |
-| Miller2018 | 22 | 22 | Done; Fig 3b flagged |
+| Miller2018 | 22 | 22 | Done |
 | SomoanoHueraHuarte2018 | 27 | 27 | Done |
-| **Total** | **111** | **110** | 106 done, 4 to check, 1 pending |
+| **Total** | **110** | **110** | 110 done, 0 to check, 0 pending |
 
 ### Missing-figure check
 
@@ -64,19 +64,20 @@ The old `rename_map.csv` and its `.xlsx` were retired on 2026-11-02. They only m
 
 ## 5. Open items
 
-- **Howell:** extract the Fig 12 experimental circles (C017, 5.81 m/s, five points); this is the only new run left. If you decide it is not worth collecting, delete the row.
 - **Li:** check the Fig 11d peak markers and the small negative endpoint of Fig 11b pitch 6.
-- **Yellow rows** (Miller2018 C001-C004, Fig 3b) are listed with instructions on the "To check" sheet of `metadata.xlsx`.
-- **Miller:** Fig 3b pressure values (125/156/183/203 bar) could not be machine-verified; the caption confirms four pressures. Fig 5 field data would need separate provenance and per-point Re.
+- **Yellow rows:** none. Anything that needs checking appears on the "To check" sheet of `metadata.xlsx`.
+- **Miller:** Fig 5 field data would need separate provenance and per-point Re if ever collected.
 - **Somoano:** near-zero cases may overlap; do not invent separate points where symbols cannot be told apart.
 - **Point order:** 20 data files are not in TSR order (El-Samanoudy Fig 6 pitch 20, Howell Figs 7-8, Migliore c/R 0.114, Miller Figs 3b and 4b, Somoano Figs 4-6). Sort a plotting copy, not the original. Migliore's last c/R 0.114 point may follow a curve extension rather than a symbol.
 - **Small curves:** several El-Samanoudy curves have only 2-5 points and overlap near the origin; check curve identity and peak accuracy by eye.
 ## 6. Verification log
 
-**2026-11-02 PDF audit.** All 118 metadata rows were compared with the seven PDFs and their figure screenshots (blade count, radius, chord, c/R, airfoil, wind speeds, pitch and pressure legends, Re values). All matched, with these limits: Miller Fig 3b pressure values are unverified (see section 5), and Howell's strut loss is left blank although its spin-down tests removed the blades and kept the spokes. Li2015 digitized peaks (0.195 for N=3, beta 8) agree with the reported 0.189.
+**2026-11-02 PDF audit.** All 118 metadata rows were compared with the seven PDFs and their figure screenshots (blade count, radius, chord, c/R, airfoil, wind speeds, pitch and pressure legends, Re values). All matched; the Miller Fig 3b pressures could not be read from the text and were confirmed against the Fig 3a legend by the user. Howell's strut loss is left blank although its spin-down tests removed the blades and kept the spokes. Li2015 digitized peaks (0.195 for N=3, beta 8) agree with the reported 0.189.
 
 ## 7. Change history
 
+- **2026-11-02 (Howell Fig 12):** Skipped by the user; row Howell2010-C017 deleted. Default now has 110 curves, all done, none to check or pending.
+- **2026-11-02 (Miller):** Fig 3b pressures (125/156/183/203 bar) confirmed against the Fig 3a legend by the user. Miller2018 C001-C004 changed from `Use - check` to `Use` (green); Default now has 110 done, 0 to check, 1 pending.
 - **2026-11-02 (data files):** Added the missing `cToR` column (0.265) to the 12 Li2015 Fig 11 files and the missing `Re_D` column (426667) to ElSamanoudy2010-C001, so all 110 data files now carry `cToR` and `Re_D`; no TSR or Cp value changed. Renamed the 18 Howell, Miller, Somoano and Migliore screenshots to `SourceYear (Fig X).png` like the others. Deleted the stale `(Default) Research Papers.zip` snapshot.
 - **2026-11-02 (later):** `metadata.csv` deleted; `metadata.xlsx` is the only metadata store and `tools/vawt_management.py refresh` replaces `build`. One blank row now separates sources. Seven duplicate rows (Howell C017-C018, Li C013-C017) removed and Howell Fig 12 renumbered C019 -> C017 (decision 10); the curve count is 111. Rows needing a check are yellow, and each carries a "Check: ... To do: ..." note collected on the "To check" sheet.
 - **2026-11-02:** Management folder standardized with the troposkein folder. Blank row after the header removed; BOM removed. Action vocabulary replaced (`Digitize` -> `Use` for the 61 extracted curves, `Extract` for the one pending); four Miller Fig 3b rows set to `Use - check`. Added `sources.csv`, `metadata.xlsx` and the shared tooling in `tools/`.
