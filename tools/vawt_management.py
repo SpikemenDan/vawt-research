@@ -37,7 +37,7 @@ ACTIONS = [
 RE_BASIS = [
     ("reported", "Source states Re_D; stored in Re_D."),
     ("reported approximate", "Source gives a rounded or approximate Re_D."),
-    ("estimated", "Constant Re_D = rho*U*D/mu from U, D and the assumed air properties."),
+    ("estimated", "Constant Re_D = rho*U*D/mu from U, D and the assumed fluid properties."),
     ("pointwise from U", "Re_D varies by row = D*U/nu; Re_D blank here, filled on each data row."),
     ("pointwise from Re_rot", "Re_D = 2*Re_rot/(cToR*TSR) on each data row; Re_D blank here."),
     ("estimated from peak TSR and reported Re_rot", "Re_D = 2*Re_rot/(cToR*TSR_peak), stored as one constant."),

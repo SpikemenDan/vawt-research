@@ -1,6 +1,6 @@
 # Troposkein VAWT: management log
 
-Curved-blade (Darrieus) rotors. Last updated 2026-11-02.
+Curved-blade (Darrieus) rotors. Last updated 2026-11-05.
 
 ## 1. Files in this folder
 
@@ -38,6 +38,8 @@ The old `rename_map_troposkein.csv` was retired on 2026-11-02; filenames are fin
 11. **Importer and notebook:** this folder is independent of the default folder's tables. Notebook ingestion was not edited or tested.
 12. **Sheldahl1977 re-digitized and Blackwell Fig 19 confirmed (2026-11-02):** the user re-digitized all four Sheldahl1977 Fig 9 series and confirmed the Blackwell Fig 19 speeds (7 and 9 m/s). Checked against the Fig 9 legend by endpoint and peak: 125 rpm squares end at TSR 6.69 (Cp -0.061); 150b triangles end at 6.73, peak 0.237; 150a circles end at 7.32, peak 0.272; 162.5 rpm diamonds end at 7.27, peak 0.238. The new C002 file held the circles and C003 the triangles, so the two files were exchanged to match the metadata (C002 = 150b, Re_rot 380000; C003 = 150a, 400000), as for Sheldahl1980. The files were reformatted with a header, N, cToR, Re_rot and pointwise Re_D. The nominal c/R 0.076 stays accepted, as in the original `Use with nominal equatorial geometry` action. All of these rows are now `Use` (green).
 13. **Battisti2016 extracted (2026-11-02):** Tables 1-4 were read from the user's screenshots and every TSR_eq, CQ,aero, CTX and CTY value (58 rows, signs included) was cross-checked against the PDF text layer, where the minus sign is a private glyph. The tables give CQ,aero, not Cp, so Cp = TSR_eq x CQ,aero is calculated and Re_D = 2 Re_rot / (cToR TSR) per row, with cToR 0.099606 and Re_rot 138000 / 205000. Peak Cp: Tab 1 0.275 at TSR 3.53; Tab 2 0.345 at 3.38; Tab 3 0.234 at 3.29; Tab 4 0.315 at 3.54. High-TSR points have negative Cp (for example Tab 2, TSR 8.17, Cp -1.19), which is kept as printed. One workbook and one CSV per table are in `Battisti2016/data/`.
+14. **Lead audit (2026-11-05).** Five rows of the literature list (Hunt et al. 2024 Table 1) use curved blades and were routed here: Blackwell and Sheldahl 1977, Sheldahl et al. 1980, Klimas and Worstell 1981, Worstell 1981 and Ashwill 1992. No metadata rows were added, because none of the outstanding reports could be read and figures must be identified first. Hunt's N, c/R and Re_D are recorded in `sources.csv` as secondary only.
+15. **BlackwellSheldahl1977** matches SAND76-0130 in rotor, five configurations, solidity, Re, speeds and airfoil, so it is treated as a summary of Blackwell1976. **Sheldahl et al. 1980** is the existing Sheldahl1980. Neither adds curves.
 
 ## 4. Source status
 
@@ -51,7 +53,18 @@ The old `rename_map_troposkein.csv` was retired on 2026-11-02; filenames are fin
 | Sheldahl1980 | Sandia 5-m, extruded NACA0015 | 5 | 5 | Done |
 | **Total** | | **41** | **41** | 41 done, 0 to check, 0 pending |
 
-Other sources in `sources.csv` (Ashwill1992, Read1986, SouthRangi, WorstellAddendum) have no curves yet. The Sandia 17-m and 34-m reports were not among the audited papers, so their figure completeness is not certified.
+Other sources in `sources.csv` have no curves yet, and the Sandia 17-m and 34-m reports are still unread, so their figure completeness is not certified:
+
+| Source | Finding (2026-11-05) | Needed |
+|---|---|---|
+| Ashwill1992 | SAND91-2228, July 1992, OSTI 7295966; no digital copy at OSTI | PDF |
+| BlackwellSheldahl1977 | Summary of Blackwell1976; Hold | Nothing unless comparing |
+| KlimasWorstell1981 | SAND81-1762, October 1981, Sandia 5-m, the only pitch/offset set here; no digital copy at OSTI | PDF |
+| Read1986 | Simon Read PhD, two blades, Re 28000 per the abstract; full text unconfirmed | Thesis |
+| SouthRangi | LTR-LA-74 (March 1971) and LTR-LA-105 (September 1972), from Muraca and Blackwell reference lists | Both reports |
+| Worstell1979 | SAND78-1737, January 1979, N=2 at seven speeds; added, was missing | PDF |
+| Worstell1981 | J. Energy 5(1) 39-42; summary, may add strut comparison | PDF |
+| WorstellAddendum | SAND79-1753, February 1980, N=3 at five speeds; date and number now resolved | PDF |
 
 Supporting references are not tracked in `sources.csv`; they are named here and in the notes instead: **Battisti2016Energy** (Energy 111 (2016) 484-497, DOI 10.1016/j.energy.2016.05.080; the companion paper of the same DeepWind campaign, which supplies the Battisti2016 geometry and is never counted as a separate experiment) and **VeersCompilation** (Sandia selected-papers compilation, SAND90-1615; a bibliographic lead only).
 
@@ -112,7 +125,8 @@ Boundaries: the rotational conversion is valid only when Re_rot = omega R c / nu
 - **Battisti2016 folder** sits outside `!archive` (moved there by the user); move it in if you want the same layout as the other sources.
 - **Source inconsistencies kept, not resolved:** Blackwell Table I versus Fig 10; Muraca imperial-to-metric chord typo; Sheldahl1980 nominal diameter versus reported c/R.
 - **Point order:** Blackwell C003, C014, C015, C026 and Muraca are not in TSR order. Muraca follows the paper's table order. Sort a plotting copy only.
-- **Leads:** audit Ashwill1992 (Sandia 34-m), WorstellAddendum (Sandia 17-m) and the other leads in `sources.csv` before adding curves.
+- **Leads:** bibliographic audit done (section 4); figure audit still needs the PDFs. Archived Sandia URLs at UNT return an HTML stub, not a PDF, and SAND81-1762 returns 404. The Wayback Machine could not be checked (rate-limited).
+- **Further lead:** Sheldahl, Comparison of field and wind tunnel Darrieus wind turbine data, OSTI 6657591 (cited by Battisti2018). Not added; likely repeats earlier data.
 
 ## 7. Verification log
 
@@ -124,6 +138,7 @@ Boundaries: the rotational conversion is valid only when Re_rot = omega R c / nu
 
 ## 8. Change history
 
+- **2026-11-05 (leads):** Audited the four open leads and the five curved-blade rows of the literature list (decisions 14-15). Added BlackwellSheldahl1977, KlimasWorstell1981, Worstell1979 and Worstell1981 to `sources.csv`; updated Ashwill1992, Read1986, SouthRangi and WorstellAddendum; extended Blackwell1976 and Sheldahl1980 notes. Curve count unchanged at 41.
 - **2026-11-02 (supporting sources):** The two `Supporting` rows (Battisti2016Energy, VeersCompilation) were removed from `sources.csv` and are named in section 4 and in the Battisti2016 notes instead. The workbook in this folder is named `metadata_troposkein.xlsx`; the tool accepts any single `metadata*.xlsx`.
 - **2026-11-02 (Battisti2016):** Tab 1-4 extracted into four workbooks and four CSVs (decision 13); the four rows changed from `Extract` to `Use`. Troposkein now has 41 curves, all done, none to check or pending.
 - **2026-11-02 (Sheldahl1977 / Blackwell):** Blackwell C025-C026 confirmed; Sheldahl1977 re-digitized by the user, files C002/C003 exchanged and all four reformatted (decision 12). Troposkein now has 37 done, 0 to check, 4 pending (the Battisti2016 tables).

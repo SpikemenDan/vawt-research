@@ -66,7 +66,7 @@ Rules: one blank row between sources (added by `refresh`). Blank means unknown, 
 | Value | Meaning |
 |---|---|
 | `reported` / `reported approximate` | source states Re_D; stored in `Re_D` |
-| `estimated` | constant Re_D = rho U D / mu from U, D and assumed air; mu and rho columns filled |
+| `estimated` | constant Re_D = rho U D / mu from U, D and assumed fluid; mu and rho columns filled |
 | `pointwise from U` | Re_D = D U / nu on each data row; `Re_D` blank |
 | `pointwise from Re_rot` | Re_D = 2 Re_rot / (cToR TSR) on each data row; `Re_D` blank |
 | `estimated from peak TSR and reported Re_rot` | one constant from the peak TSR |
@@ -74,7 +74,7 @@ Rules: one blank row between sources (added by `refresh`). Blank means unknown, 
 ## Shared conventions
 
 - Filenames: `SourceYear (Fig 4) (N = 3) (cToR = 0.085714) (C001).csv`; panels keep their letter (`Fig 11a`); numerical tables use `Tab`. Unknown c/R reads `cToR = unknown` and stays blank until resolved.
-- Assumed air where needed: mu = 1.80E-05 Pa s, rho = 1.20 kg/m3, nu = 1.50E-05 m2/s. Fill the two assumption columns only on rows that use them.
+- Assumed air where needed: mu = 1.80E-05 Pa s, rho = 1.20 kg/m3, nu = 1.50E-05 m2/s. Assumed water: mu = 1.00E-03 Pa s, rho = 1000 kg/m3, nu = 1.00E-06 m2/s. Fill the two assumption columns only on rows that use them.
 - Foil names are written `NACA0015` (no space) with qualifiers after the code.
 - Pitch magnitude and toe-in/toe-out direction are stored separately; no cross-paper sign convention is imposed.
 - Do not borrow geometry from a different paper, even by the same group.

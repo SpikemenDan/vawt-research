@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UNH Data Mislabel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Serif:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Lab-memo layout: one reading column, tables and the chart share its edges. Blue is the data; rust marks what is wrong. */
+:root {
+  --bg: #fbfcfd; --panel: #f1f4f7; --ink: #14202b; --muted: #55636f; --rule: #d5dde4;
+  --accent: #104281; --flag: #b4471f; --flagbg: #fbeee8;
+  --s1: #86b6ef; --s2: #5598e7; --s3: #256abf; --s4: #1c5cab; --s5: #104281; --mark: #eb6834;
+  --display: "IBM Plex Serif", Georgia, serif;
+  --body: "IBM Plex Sans", "Segoe UI", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", Consolas, monospace;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #12181e; --panel: #1b232b; --ink: #e8edf1; --muted: #a3b0ba; --rule: #313d47;
+    --accent: #9ec5f4; --flag: #f0a07f; --flagbg: #33211a;
+    --s1: #256abf; --s2: #3987e5; --s3: #5598e7; --s4: #86b6ef; --s5: #cde2fb; --mark: #d95926;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #12181e; --panel: #1b232b; --ink: #e8edf1; --muted: #a3b0ba; --rule: #313d47;
+  --accent: #9ec5f4; --flag: #f0a07f; --flagbg: #33211a;
+  --s1: #256abf; --s2: #3987e5; --s3: #5598e7; --s4: #86b6ef; --s5: #cde2fb; --mark: #d95926;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--bg); color: var(--ink); font: 400 16px/1.6 var(--body); }
+main { max-width: 760px; margin: 0 auto; padding: 40px 20px 64px; display: grid; gap: 36px; }
+header { display: grid; gap: 10px; }
+.meta { font: 400 13px/1.5 var(--mono); color: var(--muted); margin: 0; }
+h1 { font: 600 34px/1.2 var(--display); margin: 0; text-wrap: balance; }
+h2 { font: 600 22px/1.3 var(--display); margin: 0; text-wrap: balance; }
+section { display: grid; gap: 14px; min-width: 0; }
+p { margin: 0; max-width: 68ch; }
+ul { margin: 0; padding-left: 20px; display: grid; gap: 6px; max-width: 68ch; }
+code { font: 400 0.9em var(--mono); overflow-wrap: anywhere; }
+a { color: var(--accent); }
+a:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.bottom { background: var(--flagbg); border-left: 4px solid var(--flag); padding: 16px 18px; display: grid; gap: 8px; }
+.bottom p { max-width: none; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; font-size: 14.5px; line-height: 1.4; }
+th, td { text-align: left; padding: 8px 12px 8px 0; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font-weight: 600; color: var(--muted); font-size: 13px; }
+td code { overflow-wrap: normal; }
+td.n, th.n { font-variant-numeric: tabular-nums; font-family: var(--mono); font-size: 13.5px; white-space: nowrap; }
+.bad { color: var(--flag); font-weight: 600; }
+figure { margin: 0; display: grid; gap: 10px; min-width: 0; }
+figcaption { font-size: 14px; color: var(--muted); max-width: 68ch; }
+.chart-title { font-weight: 600; font-size: 15px; }
+.legend { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: 13px; color: var(--muted); }
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend i { width: 18px; height: 3px; border-radius: 2px; display: inline-block; }
+.legend b { width: 10px; height: 10px; border-radius: 50%; display: inline-block; background: var(--mark); }
+#chart { position: relative; width: 100%; }
+#chart svg { display: block; width: 100%; height: auto; touch-action: pan-y; }
+#tip { position: absolute; pointer-events: none; display: none; background: var(--bg); border: 1px solid var(--rule); padding: 7px 10px; font: 400 12.5px/1.5 var(--mono); font-variant-numeric: tabular-nums; white-space: pre; box-shadow: 0 2px 8px rgba(0,0,0,.14); }
+pre { margin: 0; background: var(--panel); padding: 14px 16px; overflow-x: auto; font: 400 13.5px/1.55 var(--mono); }
+ol { margin: 0; padding-left: 22px; display: grid; gap: 8px; max-width: 68ch; }
+footer { border-top: 1px solid var(--rule); padding-top: 14px; font-size: 13.5px; color: var(--muted); display: grid; gap: 6px; }
+footer p { max-width: none; }
+@media (max-width: 480px) { h1 { font-size: 27px; } main { padding-top: 28px; gap: 30px; } }
+</style>
+</head>
+<body>
+<main>
+<header>
+  <p class="meta">vawt-research / Default data set / 5 November 2026</p>
+  <h1>The "UNH-RVAT" data in our notebook is actually RM2</h1>
+</header>
+
+<div class="bottom">
+  <p><strong>The five files in <code>TurbineResearch/unh_data</code> are from the RM2 turbine, but the notebook labels them UNH-RVAT and assigns c/R = 0.28. The correct average is about 0.10.</strong></p>
+  <p>The measured TSR and Cp values are fine. The geometry attached to them is wrong, so these 125 points sit at 2.8 times their true solidity and Flow Opacity in our plots. Nothing has been changed yet; the fix is on hold until this has been reviewed.</p>
+</div>
+
+<section>
+  <h2>What is wrong</h2>
+  <p>UNH ran two tow-tank studies, published in the same year, at the same five speeds (0.4 to 1.2 m/s), and both name their files <code>Perf-1.0.csv</code> and so on. That is probably how they were confused. They are different rotors.</p>
+  <div class="scroll"><table>
+    <tr><th></th><th>What the notebook assumes</th><th>What the files really are</th></tr>
+    <tr><td>Turbine</td><td class="bad">UNH-RVAT</td><td>DOE RM2, 1:6 scale</td></tr>
+    <tr><td>Paper</td><td class="bad">Bachant &amp; Wosnik 2016, Energies</td><td>Bachant et al. 2016, PLoS ONE</td></tr>
+    <tr><td>Chord</td><td class="bad">0.14 m, constant</td><td>0.067 m root to 0.04 m tip, tapered</td></tr>
+    <tr><td>Radius</td><td class="bad">0.5 m</td><td>0.5375 m</td></tr>
+    <tr><td>c/R</td><td class="bad">0.28</td><td>0.12 to 0.07, average 0.10</td></tr>
+    <tr><td>Solidity, Nc/(2&pi;R)</td><td class="bad">0.134</td><td>about 0.048</td></tr>
+    <tr><td>Flow Opacity at peak (TSR 3.1)</td><td class="bad">0.41</td><td>about 0.15</td></tr>
+  </table></div>
+</section>
+
+<section>
+  <h2>How we know</h2>
+  <p>The curves peak in the wrong place for RVAT. Real RVAT peaks near TSR 1.9. Every one of our files peaks at TSR 3.1 to 3.4, which is where RM2 operates.</p>
+  <figure>
+    <div class="chart-title">Cp vs TSR for the five files in unh_data, against the real RVAT peak</div>
+    <div class="legend" aria-hidden="true">
+      <span><i style="background:var(--s1)"></i>0.4 m/s</span>
+      <span><i style="background:var(--s2)"></i>0.6 m/s</span>
+      <span><i style="background:var(--s3)"></i>0.8 m/s</span>
+      <span><i style="background:var(--s4)"></i>1.0 m/s</span>
+      <span><i style="background:var(--s5)"></i>1.2 m/s</span>
+      <span><b></b>Real UNH-RVAT peak at 1.0 m/s</span>
+    </div>
+    <div id="chart" role="img" aria-label="Line chart of power coefficient against tip speed ratio for five tow speeds. All curves peak between TSR 3.1 and 3.4, with a maximum Cp of 0.37. The real UNH-RVAT peak, Cp 0.26 at TSR 1.90, lies well to the left of them, where the plotted curves are close to zero."><div id="tip"></div></div>
+    <figcaption>Curves are the 125 points in our repository. The orange point is from the published RVAT data set. Peak values are listed in the table below.</figcaption>
+  </figure>
+  <p>The second check is direct: our <code>Perf-1.0.csv</code> against the same-named file in each study's public repository.</p>
+  <div class="scroll"><table>
+    <tr><th></th><th class="n">Rows</th><th class="n">Row 1 TSR, Cp, CD</th><th class="n">Row 2 TSR, Cp, CD</th><th class="n">Peak Cp at TSR</th></tr>
+    <tr><td>Our file</td><td class="n">23</td><td class="n">0.9999, 0.0021, 0.3217</td><td class="n">1.2502, 0.0025, 0.3529</td><td class="n">0.355 at 3.10</td></tr>
+    <tr><td>RM2 public file</td><td class="n">23</td><td class="n">0.9999, 0.0021, 0.3217</td><td class="n">1.2502, 0.0025, 0.3529</td><td class="n">not compared</td></tr>
+    <tr><td>RVAT public file</td><td class="n">31</td><td class="n">3.1006, &minus;0.0258, not read</td><td class="n">2.9998, 0.0165, not read</td><td class="n">0.262 at 1.90</td></tr>
+  </table></div>
+  <p>Peaks in each of our files:</p>
+  <div class="scroll"><table>
+    <tr><th class="n">Tow speed (m/s)</th><th class="n">Points</th><th class="n">TSR range</th><th class="n">Peak Cp</th><th class="n">TSR at peak</th></tr>
+    <tr><td class="n">0.4</td><td class="n">29</td><td class="n">1.00 to 5.75</td><td class="n">0.156</td><td class="n">3.40</td></tr>
+    <tr><td class="n">0.6</td><td class="n">29</td><td class="n">1.00 to 5.75</td><td class="n">0.285</td><td class="n">3.30</td></tr>
+    <tr><td class="n">0.8</td><td class="n">27</td><td class="n">1.00 to 5.25</td><td class="n">0.341</td><td class="n">3.10</td></tr>
+    <tr><td class="n">1.0</td><td class="n">23</td><td class="n">1.00 to 4.25</td><td class="n">0.355</td><td class="n">3.10</td></tr>
+    <tr><td class="n">1.2</td><td class="n">17</td><td class="n">1.00 to 3.50</td><td class="n">0.370</td><td class="n">3.10</td></tr>
+  </table></div>
+  <p><strong>Limit of this check:</strong> the direct comparison covered <code>Perf-1.0.csv</code> only, at four decimal places, for the first two rows plus the row count. The other four files are identified by their TSR grid and peak location, not row by row.</p>
+</section>
+
+<section>
+  <h2>What it affects</h2>
+  <div class="scroll"><table>
+    <tr><th>Item</th><th>Status</th><th>Detail</th></tr>
+    <tr><td><code>master_raw_matrix.parquet</code></td><td class="bad">Affected</td><td>125 of 4,298 rows carry c/R 0.28 and solidity 0.134. Their Re_D is blank.</td></tr>
+    <tr><td><code>master_peak_matrix.parquet</code></td><td class="bad">Affected</td><td>5 of 234 rows, same values.</td></tr>
+    <tr><td>Notebook Action 1 (TSR vs Opacity tessellation)</td><td class="bad">Affected</td><td>Plots <code>Dynamic_Flow_Opacity</code>, so these points are out of position.</td></tr>
+    <tr><td>Notebook Action 2 (LOESS storyboard)</td><td class="bad">Affected</td><td>Same column, used as an x-axis option.</td></tr>
+    <tr><td><code>df_compute.csv</code></td><td>Clean</td><td>4,083 rows, the same count as the Hunt data, with no c/R 0.28 rows.</td></tr>
+    <tr><td>TSR and Cp values</td><td>Clean</td><td>These are correct measurements; only the rotor identity and geometry are wrong.</td></tr>
+    <tr><td><code>.pkl</code> models and caches</td><td>Not confirmed</td><td>Could not be opened in this check. The Default notebook does not train them. If they came from <code>df_compute.csv</code>, they are clean.</td></tr>
+  </table></div>
+  <p>Separately, real UNH-RVAT data is not in the repository at all, so our set has no c/R 0.28 tow-tank rotor until it is added.</p>
+</section>
+
+<section>
+  <h2>Proposed fix (not applied)</h2>
+  <p>In notebook Block 1, replace the RVAT assumptions and rebuild the two master parquet files:</p>
+  <pre><code>df_unh_raw['dataset_source'] = 'RM2'
+df_unh_raw['cToR'] = 0.10                    # average of a tapered blade
+df_unh_raw['Re_D'] = df_unh_raw['mean_tow_speed'] * 1.075 / 1.0e-6</code></pre>
+  <p>Then add the real RVAT data from its public repository as a separate source, using c/R 0.28 and D = 1 m. Both are already listed as pending in the metadata workbook.</p>
+</section>
+
+<section>
+  <h2>Questions for review</h2>
+  <ol>
+    <li>Do you agree the data should be relabeled as RM2?</li>
+    <li>Is a single average c/R of 0.10 the right way to represent a tapered blade here, or should RM2 be flagged or kept out of c/R-based comparisons?</li>
+    <li>Do any existing figures, slides or results include these points and need to be regenerated?</li>
+  </ol>
+</section>
+
+<footer>
+  <p><strong>Sources:</strong> <a href="https://doi.org/10.1371/journal.pone.0163799">Bachant et al. 2016, PLoS ONE (RM2)</a>; <a href="https://doi.org/10.3390/en9020073">Bachant &amp; Wosnik 2016, Energies (UNH-RVAT)</a>; <a href="https://github.com/UNH-CORE/RM2-tow-tank">RM2-tow-tank data</a>; <a href="https://github.com/UNH-CORE/RVAT-Re-dep">RVAT-Re-dep data</a>.</p>
+  <p>Solidity uses the notebook's convention, N(c/R)/(2&pi;). Flow Opacity is solidity &times; TSR. Re_D in the fix assumes water at &nu; = 1.0e-6 m&sup2;/s.</p>
+</footer>
+</main>
+<script>
+const DATA = {"0.4":[[1.0,-0.02],[1.25,-0.0345],[1.5,-0.0536],[1.75,-0.0687],[2.0,-0.0783],[2.25,-0.0559],[2.5,-0.0209],[2.6,0.0004],[2.7,0.0268],[2.8,0.0553],[2.9,0.0897],[3.0,0.1073],[3.1,0.1279],[3.2,0.1375],[3.3,0.1504],[3.4,0.1558],[3.5,0.1533],[3.6,0.1471],[3.7,0.1375],[3.8,0.129],[3.9,0.1095],[4.0,0.0852],[4.25,0.0258],[4.5,-0.0487],[4.75,-0.1207],[5.0,-0.1964],[5.25,-0.2802],[5.5,-0.3795],[5.75,-0.4617]],"0.6":[[1.0,-0.014],[1.25,-0.0209],[1.5,-0.0232],[1.75,-0.0167],[2.0,0.0099],[2.25,0.0623],[2.5,0.1242],[2.6,0.1586],[2.7,0.1923],[2.8,0.2163],[2.9,0.2354],[3.0,0.2622],[3.1,0.273],[3.2,0.2814],[3.3,0.2848],[3.4,0.2748],[3.5,0.2727],[3.6,0.2561],[3.7,0.245],[3.8,0.2239],[3.9,0.2112],[4.0,0.1899],[4.25,0.1382],[4.5,0.0796],[4.75,0.0213],[5.0,-0.047],[5.25,-0.1031],[5.5,-0.1576],[5.75,-0.2313]],"0.8":[[1.0,-0.0038],[1.25,-0.0056],[1.5,-0.0009],[1.75,0.0111],[2.0,0.0474],[2.25,0.1235],[2.5,0.2047],[2.6,0.2374],[2.7,0.2638],[2.8,0.2876],[2.9,0.31],[3.0,0.3298],[3.1,0.3407],[3.2,0.332],[3.3,0.3273],[3.4,0.3245],[3.5,0.3215],[3.6,0.3086],[3.7,0.2939],[3.8,0.2855],[3.9,0.2712],[4.0,0.2614],[4.25,0.2141],[4.5,0.1685],[4.75,0.1208],[4.999,0.0711],[5.25,0.0281]],"1.0":[[1.0,0.0021],[1.25,0.0025],[1.5,0.0168],[1.75,0.0384],[2.0,0.0802],[2.25,0.1638],[2.5,0.2457],[2.599,0.2781],[2.7,0.3081],[2.8,0.3294],[2.9,0.3481],[3.0,0.352],[3.099,0.3546],[3.2,0.3541],[3.3,0.3469],[3.4,0.3457],[3.499,0.3359],[3.6,0.332],[3.7,0.324],[3.8,0.3179],[3.9,0.3005],[4.0,0.2856],[4.251,0.2531]],"1.2":[[1.0,0.0064],[1.25,0.0081],[1.5,0.0286],[1.75,0.0503],[2.0,0.1147],[2.251,0.1877],[2.5,0.2772],[2.6,0.3063],[2.7,0.3356],[2.8,0.356],[2.899,0.3652],[3.0,0.3657],[3.1,0.3695],[3.2,0.3694],[3.3,0.3695],[3.399,0.3666],[3.5,0.3676]]};
+const speeds = ['0.4','0.6','0.8','1.0','1.2'];
+const vars = ['--s1','--s2','--s3','--s4','--s5'];
+const box = document.getElementById('chart'), tip = document.getElementById('tip');
+const NS = 'http://www.w3.org/2000/svg';
+const cs = () => getComputedStyle(document.documentElement);
+function el(n, a, p) { const e = document.createElementNS(NS, n); for (const k in a) e.setAttribute(k, a[k]); if (p) p.appendChild(e); return e; }
+const allY = speeds.flatMap(s => DATA[s].map(d => d[1]));
+const yMin = Math.floor(Math.min(...allY, 0) * 10) / 10, yMax = 0.4, xMin = 0.5, xMax = 6;
+function draw() {
+  const old = box.querySelector('svg'); if (old) old.remove();
+  const W = Math.max(box.clientWidth, 300), small = W < 480, H = small ? 330 : 400;
+  const m = { l: 44, r: 12, t: 26, b: 42 };
+  const X = v => m.l + (v - xMin) / (xMax - xMin) * (W - m.l - m.r);
+  const Y = v => m.t + (yMax - v) / (yMax - yMin) * (H - m.t - m.b);
+  const c = cs(), ink = c.getPropertyValue('--muted').trim(), rule = c.getPropertyValue('--rule').trim(), main = c.getPropertyValue('--ink').trim();
+  const svg = el('svg', { viewBox: `0 0 ${W} ${H}`, width: W, height: H });
+  box.insertBefore(svg, tip);
+  const txt = (x, y, s, o = {}) => { const t = el('text', Object.assign({ x, y, fill: ink, 'font-size': 12, 'font-family': 'IBM Plex Sans, Segoe UI, sans-serif' }, o), svg); t.textContent = s; return t; };
+  for (let v = yMin; v <= yMax + 1e-9; v += 0.1) {
+    const r = Math.round(v * 10) / 10;
+    el('line', { x1: m.l, x2: W - m.r, y1: Y(r), y2: Y(r), stroke: rule, 'stroke-width': r === 0 ? 1.5 : 1 }, svg);
+    txt(m.l - 8, Y(r) + 4, r.toFixed(1).replace('-', '−'), { 'text-anchor': 'end' });
+  }
+  for (let v = 1; v <= 6; v++) txt(X(v), H - m.b + 18, String(v), { 'text-anchor': 'middle' });
+  txt((m.l + W - m.r) / 2, H - 6, 'Tip speed ratio', { 'text-anchor': 'middle' });
+  txt(4, 14, 'Cp');
+  el('line', { x1: X(3.1), x2: X(3.1), y1: m.t, y2: H - m.b, stroke: ink, 'stroke-width': 1, 'stroke-dasharray': '4 4' }, svg);
+  txt(X(3.1) + 6, m.t + 2, 'RM2 peak, TSR 3.1');
+  speeds.forEach((s, i) => {
+    const d = DATA[s].map((p, j) => (j ? 'L' : 'M') + X(p[0]).toFixed(1) + ' ' + Y(p[1]).toFixed(1)).join(' ');
+    el('path', { d, fill: 'none', stroke: c.getPropertyValue(vars[i]).trim(), 'stroke-width': 2, 'stroke-linejoin': 'round', 'stroke-linecap': 'round' }, svg);
+  });
+  el('circle', { cx: X(1.9), cy: Y(0.2616), r: 6, fill: c.getPropertyValue('--mark').trim(), stroke: c.getPropertyValue('--bg').trim(), 'stroke-width': 2 }, svg);
+  txt(X(1.9), Y(0.2616) - 28, 'Real RVAT peak', { 'text-anchor': 'middle', fill: main, 'font-weight': 600 });
+  txt(X(1.9), Y(0.2616) - 13, 'Cp 0.26, TSR 1.90', { 'text-anchor': 'middle', fill: main });
+  const cross = el('line', { y1: m.t, y2: H - m.b, stroke: ink, 'stroke-width': 1, visibility: 'hidden' }, svg);
+  const hit = el('rect', { x: m.l, y: m.t, width: W - m.l - m.r, height: H - m.t - m.b, fill: 'transparent' }, svg);
+  const move = e => {
+    const r = svg.getBoundingClientRect(), px = (e.clientX - r.left) * W / r.width;
+    const v = xMin + (px - m.l) / (W - m.l - m.r) * (xMax - xMin), lines = [];
+    for (const s of speeds) {
+      const n = DATA[s].reduce((a, b) => Math.abs(b[0] - v) < Math.abs(a[0] - v) ? b : a);
+      if (Math.abs(n[0] - v) < 0.2) lines.push(`${s} m/s  TSR ${n[0].toFixed(2)}  Cp ${n[1].toFixed(3).replace('-', '−')}`);
+    }
+    if (!lines.length) { tip.style.display = 'none'; cross.setAttribute('visibility', 'hidden'); return; }
+    cross.setAttribute('x1', px); cross.setAttribute('x2', px); cross.setAttribute('visibility', 'visible');
+    tip.textContent = lines.join('\n'); tip.style.display = 'block';
+    const tw = tip.offsetWidth, left = px + 12 + tw > W ? px - tw - 12 : px + 12;
+    tip.style.left = Math.max(0, left) + 'px'; tip.style.top = (m.t + 8) + 'px';
+  };
+  hit.addEventListener('pointermove', move);
+  hit.addEventListener('pointerleave', () => { tip.style.display = 'none'; cross.setAttribute('visibility', 'hidden'); });
+}
+draw();
+let t; addEventListener('resize', () => { clearTimeout(t); t = setTimeout(draw, 120); });
+new MutationObserver(draw).observe(document.documentElement, { attributes: true, attributeFilter: ['data-theme'] });
+matchMedia('(prefers-color-scheme: dark)').addEventListener('change', draw);
+if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw);
+</script>
+</body>
+</html>
